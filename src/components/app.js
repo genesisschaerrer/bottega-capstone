@@ -12,7 +12,7 @@ import AboutUs from "./pages/about-us"
 import Cart from "./pages/cart"
 import NavBar from "./navigation/nav-bar"
 import ShopDetail from "./pages/shop-detail"
-import Footer from "./navigation/footer"
+// import Footer from "./navigation/footer"
 
 export default class App extends Component {
 
@@ -32,7 +32,7 @@ export default class App extends Component {
             <Route path="/shop-detail" component={ShopDetail} />
           </Switch>
 
-        <Footer />
+        {/* <Footer /> */}
         </Router>
       </div>
     );

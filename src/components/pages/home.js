@@ -10,7 +10,7 @@ class Home extends Component {
         return (
             <div className="homepage-container">
 
-                <div>Hero Picture</div>
+                <div className="hero-picture">MOSS & TIMBER</div>
 
                 <div className="hero-container">
 
@@ -29,7 +29,7 @@ class Home extends Component {
 
                 </div>
 
-                <Link to="/shopall">SHOP ALL</Link>
+                <Link className="shop-all-btn" to="/shopall">SHOP ALL</Link>
 
             </div>
         )

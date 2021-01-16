@@ -1,0 +1,49 @@
+.homepage-container{
+    height: 100%;
+    width: 100%;
+
+    .hero-picture{
+        width: 100%;
+        height: 30rem;
+        background-color: lightgreen;
+    }
+
+    .hero-container{
+        width: 100%;
+        height: 100%;
+        background-color: pink;
+        display: flex;
+        flex-direction: column;
+
+        .hero-message{
+            margin: 0 auto;
+            background-color: lightblue;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+
+            .homepage-container-message{
+                background-color: lightgrey;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .shop-category-container{
+            background-color: yellow;
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .shop-all-btn {
+        width: 100%;
+        margin-left: 45%;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+}
