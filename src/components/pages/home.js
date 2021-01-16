@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import {Link} from 'react-router-dom'
 
 class Home extends Component {
     constructor(){
@@ -7,7 +8,30 @@ class Home extends Component {
 
     render(){
         return (
-            <div>Made it to Home</div>
+            <div className="homepage-container">
+
+                <div>Hero Picture</div>
+
+                <div className="hero-container">
+
+                    <div className="hero-message">
+                       <div className="hero-container-quote">The Earl Laughts in flowers</div> 
+                       <div className="homepage-container-message">
+                            <div>Moss and Timber is a flower shop located in STG</div>
+                            <Link to="/about">ABOUT US</Link>
+                       </div>
+                    </div>
+
+                    <div className="shop-category-container">
+                        <div>SUCCULENTS</div>
+                        <div>FLOWERS</div>
+                    </div>
+
+                </div>
+
+                <Link to="/shopall">SHOP ALL</Link>
+
+            </div>
         )
     }
 }
