@@ -16,7 +16,7 @@ function ShopDetail () {
                          <div className="product-info-wrapper">
                             <div>{product.description}</div>
                             <div className="product-price">${product.price}.00</div>
-                            <div>Quantity</div>
+                            <div className="cart-quantity">Quantity</div>
                             <button>Add To Cart</button>
                          </div>
                     </div>

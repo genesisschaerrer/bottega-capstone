@@ -4,6 +4,7 @@
     .show-container {
         background-color: lightgreen;
         width: 80%;
+        height: 70%;
         margin: 15em auto;
 
         .product-name-detail-page{
@@ -14,14 +15,16 @@
     
     
         .display-container{
+            margin: 0 auto;
             width: 80%;
+            height: 80%;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
       
     
             img {
-                width: 45%;
+                width: 30%;
                 background-color: lightsalmon;
             }
 
@@ -34,6 +37,14 @@
                 flex-direction: column;
                 justify-content: space-around;
                 padding: 20px;
+
+                .product-price {
+                    align-self: flex-end;
+                }
+
+                .cart-quantity {
+                    align-self: flex-end;
+                }
             }
     
         }
