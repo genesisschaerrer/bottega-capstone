@@ -1,0 +1,43 @@
+.detail-page-container {
+    width: 100%;
+
+    .show-container {
+        background-color: lightgreen;
+        width: 80%;
+        margin: 15em auto;
+
+        .product-name-detail-page{
+            text-align: center;
+            font-size: 5em;
+            padding: 27px 2px;
+        }
+    
+    
+        .display-container{
+            width: 80%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+      
+    
+            img {
+                width: 45%;
+                background-color: lightsalmon;
+            }
+
+
+            .product-info-wrapper {
+                width: 40%;
+                height: 70%;
+                background-color: lightgrey;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 20px;
+            }
+    
+        }
+
+
+    }
+}

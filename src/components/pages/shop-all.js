@@ -1,15 +1,23 @@
-import React, { Component } from "react"
+import React from "react"
+import products from "../../mock-data/mock-data"
 
-class ShopAll extends Component {
-    constructor(){
-        super()
-    }
 
-    render(){
+
+function ShopAll() {
+     const productDisplay = products.map(product => {
         return (
-            <div>Made it to Shop All</div>
+            <div className="product-card" key={product.id}>
+                <div className="product-name">{product.name}</div>
+                <img className="card-img" src={product.image} />
+                <div className="product-price">${product.price}.00</div>
+            </div>
         )
-    }
+    })
+        return (
+            <div className="product-container">
+                {productDisplay}
+            </div>
+        )
 }
 
 export default ShopAll
