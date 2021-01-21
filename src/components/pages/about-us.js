@@ -1,9 +1,14 @@
 import React from "react"
 
+import ImageSlider from "../images/image-slider"
+
 function AboutUs() {
     
     return (
-        <div>Made it to About Us</div>
+        <div>
+            <h1>Made it to about us</h1>
+            <ImageSlider />
+        </div>
     )
     
 }
