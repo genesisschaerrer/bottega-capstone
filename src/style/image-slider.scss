@@ -1,0 +1,53 @@
+.about-page-container {
+    width: 100%;
+
+    .carousel-container {
+        width: 90%;
+        margin: 70px;
+        margin-bottom: 200px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .carousel-img {
+            width: 600px;
+            border-radius: 10px;
+        }
+    
+        .right-arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 3rem;
+            color: black;
+            z-index: 10;
+            cursor: pointer;
+            user-select: none;
+            right: 32px;
+        }
+    
+        .left-arrow {
+            position: absolute;
+            top: 50%;
+            left: 32px;
+            font-size: 3rem;
+            color: black;
+            z-index: 10;
+            cursor: pointer;
+            user-select: none;
+        }
+    
+        .slide {
+            opacity: .8;
+            transition-duration: .5s ease;
+        }
+    
+        .slide.active {
+            opacity: 1;
+            transition-duration: .5s;
+        }
+    }
+
+}
+
+

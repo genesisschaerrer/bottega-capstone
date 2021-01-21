@@ -1,26 +1,26 @@
-// .carousel-container {
-//     max-width: 600px;
-//     position: relative;
+.about-page-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-//     .carousel-item {
-//         display: none;
+    .mission-statement-container {
+        width: 100%;
 
-//         img{
-//             width: 100%;
-//             max-width: 600px;
-//             height: auto;
-//         }
-//     }
+        .about-us-background-div-img {
+            width: 100%;
+            height: 600px;
+            position: relative;
+        }
 
-//     .carousel-item-visible {
-//         display: block;
-//     }
-
-//     .carousel-actions {
-//         display: flex;
-//         width: 100%;
-//         justify-content: space-between;
-//         position: absolute;
-//         top: 50%;
-//     }
-// }
+        .mission-statement-box-container {
+            width: 400px;
+            height: 300px;
+            background-color: white;
+            position: relative;
+            left: 1000px;
+            bottom: 400px;
+        }
+    }
+}
