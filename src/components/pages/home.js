@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import {Link} from 'react-router-dom'
 
+
 import LoginModal from "../modals/login-modal"
+
 
 // images
 import heroImage from "../../../static/images/home-page/hero-section.png"
@@ -26,6 +28,7 @@ const Home = () => {
             <div className="hero-picture"
                 style={{
                     background: "url("+ heroImage +") no-repeat",
+                    backgroundAttachment: "fixed",
                     backgroundSize: "cover",
                     backgroundPosition: "center"
                 }}
@@ -64,8 +67,29 @@ const Home = () => {
 
             <Link className="shop-all-btn" to="/shopall">SHOP ALL</Link>
 
+            <div className="address">
+                2141 HARMONY CIRCLE, ST. GEORGE UT 84790 | 435.555.5555
+            </div>
+
+            <div className="map-social-media-container">
+                <div className="map">
+                <iframe className="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3183.3122197692396!2d-113.57213248440985!3d37.07387005994554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ca5ab30a63b251%3A0x44950d2affeb5ee7!2s2141%20Harmony%20Cir%2C%20St.%20George%2C%20UT%2084790!5e0!3m2!1sen!2sus!4v1611353917805!5m2!1sen!2sus"></iframe>
+                </div>
+                <div className="social-media-info">
+                    <div>
+                        Want to stay update on our latest designs? 
+                    </div>
+                    <div>
+                        Make sure you are following us
+                    </div>
+                    <div>
+                        MAKE ME AN IG LINK
+                    </div>
+                </div>
+            </div>
+
         </div>
-        )
+    )
 
 }
 
