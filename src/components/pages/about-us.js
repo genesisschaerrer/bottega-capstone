@@ -17,13 +17,13 @@ function AboutUs() {
                         backgroundPosition: "center"
                     }}
                 >
-                </div>
-                <div className="mission-statement-box-container">
-                    <div className="mission-statement-title">
-                        TITLE
-                    </div>
-                    <div className="mission-statement-message">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque.
+                    <div className="mission-statement-box-container">
+                        <div className="mission-statement-title">
+                            TITLE
+                        </div>
+                        <div className="mission-statement-message">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque.
+                        </div>
                     </div>
                 </div>
             </div>

@@ -4,13 +4,18 @@
 
     .hero-picture{
         width: 100%;
-        height: 30rem;
-        background-color: lightgreen;
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 6rem;
+        opacity: .95;
     }
 
     .hero-container{
         width: 100%;
         height: 100%;
+        margin-top: 5em;
         background-color: pink;
         display: flex;
         flex-direction: column;
@@ -19,14 +24,28 @@
             margin: 0 auto;
             background-color: lightblue;
             width: 80%;
+            height: 400px;
             display: flex;
             justify-content: space-between;
             align-content: center;
+
+            .hero-container-quote {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                width: 60%;
+            }
 
             .homepage-container-message{
                 background-color: lightgrey;
                 display: flex;
                 flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .about-us-home-btn {
+                    margin-top: 3em;
+                }
             }
         }
 
@@ -36,6 +55,24 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
+
+            .shop-flowers {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 400px;
+                width: 50%;
+                cursor: pointer;
+            }
+
+            .shop-plants {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 400px;
+                width: 50%;
+                cursor: pointer;
+            }
         }
     }
 
