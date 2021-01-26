@@ -11,52 +11,77 @@
 
     .hero-picture{
         width: 100%;
-        height: 450px;
+        height: 500px;
         display: flex;
+        background: url("../../static/images/home-page/hero-section.png") no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
         justify-content: center;
         align-items: center;
-        font-size: 6rem;
-        opacity: .95;
+        font-size: 7rem;
+        letter-spacing: 9px;
+        opacity: 1.5;
+        color: white;
+        font-size: bold;
     }
 
     .hero-container{
         width: 100%;
-        margin-top: 5em;
-        background-color: pink;
+        margin-top: 10em;
+        margin-bottom: 2.5em;
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         .hero-message{
             margin: 0 auto;
-            background-color: lightblue;
             width: 80%;
-            height: 400px;
+            margin-bottom: 9em;
             display: flex;
             justify-content: space-between;
             align-content: center;
 
             .hero-container-quote {
                 display: flex;
+                font-family: 'Homemade Apple', cursive;
+                font-size: 3rem;
                 align-items: flex-start;
-                justify-content: center;
-                width: 60%;
+                justify-content: flex-start;
+                width: 50%;
             }
 
             .homepage-container-message{
-                background-color: lightgrey;
                 display: flex;
                 flex-direction: column;
+                width: 50%;
+                padding-right: 1em;
+                font-size: 1.7rem;
                 justify-content: flex-start;
                 align-items: flex-start;
+                letter-spacing: 2px;
+                line-height: 2;
+            }
+        }
 
-                .about-us-home-btn {
-                    margin-top: 3em;
-                }
+        .about-us-home-btn {
+            align-self: center;
+            text-decoration: none;
+            color: $darkgray;
+            padding: .7em 1.5em;
+            border: 1px $darkgray solid;
+            font-size: 2rem;
+            letter-spacing: 3.5px;
+            margin-bottom: 5em;
+
+            &:hover{
+                border: 1px #cb997e solid;
+                background-color: #f4f3ee;
+                color: #cb997e;
             }
         }
 
         .shop-category-container{
-            background-color: yellow;
             width: 80%;
             margin: 0 auto;
             display: flex;
@@ -66,9 +91,16 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                background: url("../../static/images/home-page/flowers.png") no-repeat;
+                background-size: "cover";
+                background-position: "center";
                 height: 400px;
-                width: 50%;
+                font-size: 3.5rem;
+                width: 45%;
+                border: .7em solid #A5A58D;
                 cursor: pointer;
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19),
+                0 0.3rem 0.3rem rgba(0, 0, 16, 0.23);
             }
 
             .shop-plants {
@@ -76,31 +108,49 @@
                 justify-content: center;
                 align-items: center;
                 height: 400px;
-                width: 50%;
+                background: url("../../static/images/home-page/plants.png") no-repeat;
+                background-size: "cover";
+                background-position: "center";
+                width: 45%;
+                font-size: 3.5rem;
+                border: .7em solid #A5A58D;
                 cursor: pointer;
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19),
+                0 0.3rem 0.3rem rgba(0, 0, 16, 0.23);
             }
         }
     }
 
     .shop-all-btn {
-        
-        border: 1px solid black;
-        margin-top: 5em;
+        margin-top: 3em;
         text-decoration: none;
-        cursor: pointer;
-        padding: 3em 7em;
-        cursor: pointer;    
+        color: $darkgray;
+        padding: .7em 1.5em;
+        border: 1px $darkgray solid;
+        font-size: 2rem;
+        letter-spacing: 3.5px;  
+
+        &:hover{
+            border: 1px #cb997e solid;
+            background-color: #f4f3ee;
+            color: #cb997e;
+        }
     }
 
     .address {
-        margin-top: 5em;
+        margin-top: 3em;
+        margin-bottom: 2em;
+        font-size: 2rem;
+        color: $darkgray;
+        letter-spacing: 3px;
     }
 
     .map-social-media-container {
         width: 60vw;
         margin-top: 3em;
+        margin-bottom: 6em;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         
         .map {
 
@@ -113,8 +163,14 @@
 
         .social-media-info {
             width: 400px;
-            background-color: lightgreen;
-            padding: 3em;
+            font-size: 1.7rem;
+            background-image: url("../../static/images/home-page/social-media.png");
+            background-size: cover;
+            background-position: center;
+            letter-spacing: 2px;
+            line-height: 2;
+            background-color: #ffffff;
+            opacity: .99;
         }
     }
 

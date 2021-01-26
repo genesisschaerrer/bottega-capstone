@@ -5,25 +5,54 @@
     flex-direction: column;
     align-items: center;
 
+    .box-container {
+        display: flex;
+        justify-content: space-between;
+        width: 80vw;
+        justify-content: space-between;
+        align-items: center;
+        margin: 17em 0;
+
+        .box{
+            background-color: #ffffff;
+            font-family: 'Homemade Apple', cursive;
+            opacity: .9;
+            font-size: 4rem;
+            padding: 1.5em;
+            color: #fec5bb;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.05),
+            0 0.3rem 0.3rem rgba(0, 0, 1, 0.05);
+        }
+    }
+
     .mission-statement-container {
         width: 100%;
 
         .about-us-background-div-img {
             width: 100%;
             height: 600px;
+            margin-bottom: 13em;
             display: flex;
             justify-content: flex-end;
             align-items: center;
 
             .mission-statement-box-container {
                 width: 30%;
-                padding: 5em;
+                padding: 4em;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                text-align: center;
                 margin-right: 5em;
-                background-color: gray;
-                opacity: .7;
+                font-size: 1.7rem;
+                letter-spacing: 2px;
+                line-height: 2;
+                background-color:#ffffff;
+                opacity: .9;
+
+                .mission-statement-title {
+                    margin-bottom: 2em;
+                }
             }
         }
 

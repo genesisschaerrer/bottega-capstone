@@ -3,6 +3,13 @@ html {
 }
 
 html, body {
+    * {
+        box-sizing: border-box;
+    }
+    line-height: 1.7;
+    letter-spacing: 1.3px;
+    background-color: #F0EFEB;
+    color: #4A4F4E;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -29,7 +36,6 @@ body {
 }
 
 .app {
-    margin-top: 2rem;
     display: grid;
     justify-items: center;
 }

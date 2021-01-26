@@ -1,7 +1,6 @@
 .nav-container {
     width: 100%;
     margin-top: 0px;
-    background-color: black;
 
     .nav-bar {
         margin: 0 auto;
@@ -10,12 +9,28 @@
         display: flex;
         justify-content: space-between;    
         align-items: center;
-        color: white;
+        color: $darkgray;
+
+        .navbar-logo {
+            border: 1px solid transparent;
+            width: 11em;
+            padding: 1.3em;
+
+            &:hover {
+                border: 1px solid black;
+            }
+        }
         
-        a {
+        .navbar-link {
             text-decoration: none;
-            color: white;
+            color: $darkgray;
             font-size: 1.5em;
+            padding: .2em;
+            border-bottom: 1px solid transparent;
+
+            &:hover{
+            border-bottom: 1px solid $darkgray;
+            }
         }
     
         .menu-bar {

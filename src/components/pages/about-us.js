@@ -9,6 +9,11 @@ function AboutUs() {
     return (
         <div className="about-page-wrapper">
             <ImageSlider slides={carouselImages}/>
+            <div className="box-container">
+                <div className="box">unique</div>
+                <div className="box">beautiful</div>
+                <div className="box">trusted</div>
+            </div>
             <div className="mission-statement-container">
                 <div className="about-us-background-div-img"
                     style={{
