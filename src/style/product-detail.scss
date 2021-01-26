@@ -3,9 +3,9 @@
     height: 100%;
     margin: 10em auto;
 
-    .show-container {
-        background-color: lightgreen;
-        width: 80%;
+    .show-product-container {
+        background-color: #ddbea9;
+        width: 70%;
         height: 80%;
         margin: 0 auto;
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19),
@@ -13,42 +13,79 @@
 
         .product-name-detail-page{
             text-align: center;
-            font-size: 5em;
-            padding: 27px 2px;
+            font-size: 6rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            padding: 2rem;
+    
         }
     
     
         .display-container{
             margin: 0 auto;
-            width: 80%;
+            width: 85%;
             height: 80%;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
+            margin-bottom: 6em;
+            padding-bottom: 4em;
       
     
             img {
-                width: 30%;
-                background-color: lightsalmon;
+                width: 40%;
+                height: 80%;
             }
 
 
             .product-info-wrapper {
                 width: 40%;
-                height: 70%;
-                background-color: lightgrey;
+                height: 80%;
+                background-color: rgba(255,255,255, .9);
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
-                padding: 20px;
+                padding: 3em 5em;
+
+
+                .product-description {
+                    font-size: 1.5rem;
+                    text-align: left;
+                    letter-spacing: 1.3px;
+                    line-height: 1.7;
+                }
 
                 .product-price {
+                    font-size: 1.5rem;
                     align-self: flex-end;
                 }
 
                 .cart-quantity {
+                    font-size: 1.5rem;
                     align-self: flex-end;
                 }
+
+                .btn {    
+                    margin-top: 1.5em;
+                    width: 75%;
+                    margin: 0 auto;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    background-color: transparent;
+                    color: $darkgray;
+                    padding: .6em .3em;
+                    border: 1px $darkgray solid;
+                    font-size: 1.7rem;
+                    letter-spacing: 2px;  
+            
+                    &:hover{
+                        border: 1px solid #a5a58d;
+                        background-color: #a5a58d;
+                        color: #fff;
+                    }
+                        
+                    }
             }
     
         }

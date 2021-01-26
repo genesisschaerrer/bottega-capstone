@@ -7,17 +7,17 @@ function ShopDetail () {
      const productDetail = products.map(product => {
         if(product.id === 1){
         return (
-            <div className="show-container" key={product.id}>
+            <div className="show-product-container" key={product.id}>
 
                 <div className="product-name-detail-page">{product.name}</div>
 
                     <div className="display-container">
                         <img className="card-img" src={product.image} />
                          <div className="product-info-wrapper">
-                            <div>{product.description}</div>
+                            <div className="product-description">{product.description}</div>
                             <div className="product-price">${product.price}.00</div>
                             <div className="cart-quantity">Quantity</div>
-                            <button>Add To Cart</button>
+                            <button className="btn">Add To Cart</button>
                          </div>
                     </div>
 
