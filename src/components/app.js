@@ -17,6 +17,7 @@ import AdminLogin from "./pages/admin-login"
 import AdminDashboard from "./pages/admin-dashboard";
 import shopFlowers from "./pages/shop-flowers"
 import shopPlants from "./pages/shop-plants"
+import { CartProvider } from "./context/cart-context";
 
 
 // const theme = {
@@ -29,6 +30,7 @@ import shopPlants from "./pages/shop-plants"
 const App = () => {
 
     return (
+      <CartProvider>
       <div className='app'>
         <Router>
           <NavBar />
@@ -49,6 +51,7 @@ const App = () => {
         {/* <Footer /> */}
         </Router>
       </div>
+      </CartProvider>
     )
 }
 

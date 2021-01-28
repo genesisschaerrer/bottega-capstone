@@ -1,21 +1,18 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useContext} from "react"
 import {useParams} from "react-router-dom"
 import axios from "axios"
 
-// const reducer = (state, action) => {
-//     switch(action.type){
-//         case "setCount":
-//             return {...state, count: action.count + action.amt}
-//     }
-// }
+
+import {CartContext} from "../context/cart-context"
+
 const ShopDetail = () => {
     const {id} = useParams()
-    // const [state, dispatch] = useReducer(reducer, {count: 0})
+    const [cart, setCart] = useContext(CartContext)
     const [products, setProducts] = useState([])
     let [quantity, setQuantity] = useState(0)
     // const {cart, setCart} = AppContext()
-    // let [count, setCount] = setCount(0)
 
+    // console.log(products)
 
     useEffect(() => {
         axios.get("http://localhost:4000/")
@@ -25,23 +22,17 @@ const ShopDetail = () => {
         .catch(error => console.log("error, ", error))
     }, [])
 
-
-    const removeCartItem = e => {
-        // console.log(cart)
-        // let removedItem = cart.pop()
-        // setCart(cart.filter(products => {
-        //     return products !== removedItem
-        // }))
-    }
-
     const addToCart = () => {
-        const items = []
-        // Loop per qty
-        // push to empty array
+        let getProperItem = products.filter(products => products._id === id)
+        let items = []
 
-        // After loop
-        // setCart([...cart, ...items])
+        for(let i=1; i <= quantity; i++){
+               items.push(...getProperItem)
+        }
+        setCart([...cart, ...items])
     }
+
+    console.log(cart)
 
     const productDetail = products.filter(products => products._id === id).map(product => {
         return (
@@ -59,15 +50,13 @@ const ShopDetail = () => {
                                 <div>{quantity}</div>
                                 <button className="add" onClick={() => setQuantity(quantity + 1)}>+</button>
                             </div>
-                            {/* <button className="btn" onClick={() => setCart([...cart, product])}>Add To Cart</button> */}
+                            <button className="btn" onClick={quantity > 0 ? addToCart: null}>Add To Cart</button>
                          </div>
                     </div>
 
             </div>
         )
     })
-  
-  
 
     return (
         <div className="detail-page-container">
@@ -77,3 +66,20 @@ const ShopDetail = () => {
 }
 
 export default ShopDetail
+//SEE THIS TO REMOVE FROM YOUR CART
+// const removeCartItem = e => {
+    // console.log(cart)
+    // let removedItem = cart.pop()
+    // setCart(cart.filter(products => {
+    //     return products !== removedItem
+    // }))
+// }
+
+// const reducer = (state, action) => {
+//     switch(action.type){
+//         case "setCount":
+//             return {...state, count: action.count + action.amt}
+//     }
+// }
+
+    // const [state, dispatch] = useReducer(reducer, {count: 0})
