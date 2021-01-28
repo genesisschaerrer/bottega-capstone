@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from "react"
-import {Link} from "react-router-dom"
 import axios from "axios"
-
-
-
-const ShopAll = () => {
+import {Link} from "react-router-dom"
+const shopPlants = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
@@ -15,9 +12,7 @@ const ShopAll = () => {
         .catch(error => console.log("error, ", error))
     }, [])
 
-    const renderProducts = () => {
-        return (
-            products.map(product => {
+        const plantProducts = products.filter(products => products.category === "plant").map(product => {
                 return (
                     <Link to={`/shop-detail/${product._id}`} key={product._id}>
                         <div className="product-card">
@@ -28,14 +23,14 @@ const ShopAll = () => {
                     </Link>
                 )
             })     
-        )          
-    }
+        console.log(products)  
+        console.log(plantProducts)
 
     return (
         <div className="product-container">
-            {renderProducts()}
+            {plantProducts}
         </div>
     )
 }
 
-export default ShopAll
+export default shopPlants

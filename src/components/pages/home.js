@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import {Link} from 'react-router-dom'
 
 
-
 const Home = () => {
 
     return (
@@ -24,8 +23,13 @@ const Home = () => {
                 <Link  className="about-us-home-btn" to="/about">ABOUT US</Link>
 
                 <div className="shop-category-container">
-                    <div className="shop-plants">SUCCULENTS</div>
-                    <div className="shop-flowers">FLOWERS</div>
+                    <Link to="/shop-plants">
+                        <div className="shop-plants">SUCCULENTS</div>
+                    </Link>
+
+                    <Link to="shop-flowers">
+                        <div className="shop-flowers">FLOWERS</div>
+                    </Link>
                 </div>
 
             </div>

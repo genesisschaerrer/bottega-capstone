@@ -1,14 +1,24 @@
-import React from "react"
-
+import React, {useState, useEffect} from "react"
+import axios from "axios"
 import ImageSlider from "../images/image-slider"
-import carouselImages from "../../mock-data/carousel-mock-imgs"
 import florist from "../../../static/images/about-page/florist.png"
 
+
 function AboutUs() {
+    const [ carouselImages, setCarouselImages] = useState([])
+
+    useEffect(() => {
+        axios("http://localhost:4000/about")
+        .then(response => {
+            setCarouselImages(response.data)
+        })
+        .catch(error => console.log("error, ", error)) 
+    },[])
+ 
     
     return (
         <div className="about-page-wrapper">
-            <ImageSlider slides={carouselImages}/>
+            <ImageSlider carouselImages={carouselImages}/>
             <div className="box-container">
                 <div className="box">unique</div>
                 <div className="box">beautiful</div>

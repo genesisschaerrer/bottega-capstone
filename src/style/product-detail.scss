@@ -20,8 +20,7 @@
             padding: 2rem;
     
         }
-    
-    
+
         .display-container{
             margin: 0 auto;
             width: 85%;
@@ -57,13 +56,33 @@
                 }
 
                 .product-price {
-                    font-size: 1.5rem;
+                    font-size: 2rem;
+                    letter-spacing: 3px;
                     align-self: flex-end;
                 }
 
-                .cart-quantity {
-                    font-size: 1.5rem;
+                .cart-quantity-container {
+                    display: flex;
+                    font-size: 1.9rem;
                     align-self: flex-end;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 80px;
+                    font-size: 2rem;
+
+                    .decrement, .add {
+                        font-size: 2.4rem;
+                        color: #cb997e;
+                        border: none;
+                        background-color: transparent;
+                        cursor: pointer;
+
+                        &:focus {
+                            border: none;
+                            outline: none;
+                        }
+                        
+                    }
                 }
 
                 .btn {    

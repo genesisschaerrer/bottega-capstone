@@ -15,6 +15,8 @@ import ShopDetail from "./pages/shop-detail"
 import Footer from "./navigation/footer"
 import AdminLogin from "./pages/admin-login"
 import AdminDashboard from "./pages/admin-dashboard";
+import shopFlowers from "./pages/shop-flowers"
+import shopPlants from "./pages/shop-plants"
 
 export default class App extends Component {
   constructor(props){
@@ -37,9 +39,11 @@ export default class App extends Component {
             <Route path="/about" component={AboutUs} /> 
             <Route path="/cart" component={Cart} /> 
 
-            <Route path="/shop-detail" component={ShopDetail} />
+            <Route path="/shop-detail/:id" component={ShopDetail} />
             <Route path="/adminlogin" component={AdminLogin} />
             <Route path="/admindashboard" component={AdminDashboard} />
+            <Route path="/shop-plants" component={shopPlants} /> 
+            <Route path="/shop-flowers" component={shopFlowers} />
           </Switch>
 
         {/* <Footer /> */}

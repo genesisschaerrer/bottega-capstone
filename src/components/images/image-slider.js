@@ -1,11 +1,9 @@
 import React, {useState} from "react"
 
 
-import carouselImages from "../../mock-data/carousel-mock-imgs"
-
 const ImageSlider = (props) => {
     const [currentImage, setCurrentImage] = useState(0)
-    const length = props.slides.length
+    const length = props.carouselImages.length
 
     const nextSlide = () => {
         setCurrentImage(currentImage === length - 1 ? 0 : currentImage + 1)
@@ -16,16 +14,16 @@ const ImageSlider = (props) => {
     }
 
   
-    const carousel = carouselImages.map((image, index) => {
+    const carousel = props.carouselImages.map((image, index) => {
         return(
-            <div key={image.id} className={index === currentImage ? 'active slide' : 'slide'}>
+            <div key={image._id} className={index === currentImage ? 'active slide' : 'slide'}>
                 {index === currentImage && (
-                    <img className="carousel-img" src={image.imgUrl} />
+                    <img className="carousel-img" src={image.carouselImgUrl} />
                 )}
             </div>
         )
     })
-    console.log(currentImage)
+
     
     return (
         <div className="about-page-container">
