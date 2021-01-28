@@ -1,15 +1,15 @@
-import React, { Component } from "react"
+import React from "react"
 
-class Cart extends Component {
-    constructor(){
-        super()
-    }
+const Cart = () => {
+    return (
+        <div className="checkout-review-container">
+            <h1>CHECKOUT REVIEW</h1>
 
-    render(){
-        return (
-            <div>Made it to Cart</div>
-        )
-    }
+
+            <div>TOTAL PRICE: $0.00</div>
+            <button>PLACE ORDER</button>
+        </div>
+    )
 }
 
 export default Cart

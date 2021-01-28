@@ -87,6 +87,13 @@
             display: flex;
             justify-content: space-between;
 
+            a {
+                text-decoration: none;
+                width: 45%;
+                color: $darkgray;
+    
+            }
+
             .shop-flowers {
                 display: flex;
                 justify-content: center;
@@ -96,7 +103,7 @@
                 background-position: "center";
                 height: 400px;
                 font-size: 3.5rem;
-                width: 45%;
+                width: 100%;
                 border: .7em solid #A5A58D;
                 cursor: pointer;
                 box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19),
@@ -111,7 +118,7 @@
                 background: url("../../static/images/home-page/plants.png") no-repeat;
                 background-size: "cover";
                 background-position: "center";
-                width: 45%;
+                width: 100%;
                 font-size: 3.5rem;
                 border: .7em solid #A5A58D;
                 cursor: pointer;

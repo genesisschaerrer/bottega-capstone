@@ -15,13 +15,22 @@
 
         .box{
             background-color: #ffffff;
-            font-family: 'Homemade Apple', cursive;
             opacity: .9;
-            font-size: 4rem;
-            padding: 1.5em;
-            color: #fec5bb;
+            padding: 4em;
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.05),
             0 0.3rem 0.3rem rgba(0, 0, 1, 0.05);
+
+            .review-text{
+                font-size: 1.7rem;
+                color: $darkgray;
+
+            }
+
+            .review-client-name {
+                font-size: 1.9rem;
+                color: #fec5bb;
+                font-family: 'Homemade Apple', cursive;
+            }
         }
     }
 

@@ -18,16 +18,16 @@ import AdminDashboard from "./pages/admin-dashboard";
 import shopFlowers from "./pages/shop-flowers"
 import shopPlants from "./pages/shop-plants"
 
-export default class App extends Component {
-  constructor(props){
-    super(props)
 
-    this.state = {
-      loggedInStatus: "NOT_LOGGED_IN"
-    }
-  }
+// const theme = {
+//   light: {
+//     colro: "red"
+//   },
+//   dark: {}
+// }
+// <context.provider value={{cart: cart, setCart: setCart}}
+const App = () => {
 
-  render() {
     return (
       <div className='app'>
         <Router>
@@ -49,6 +49,7 @@ export default class App extends Component {
         {/* <Footer /> */}
         </Router>
       </div>
-    );
-  }
+    )
 }
+
+export default App

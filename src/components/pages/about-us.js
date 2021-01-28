@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
+
+import CustumerReview from "../reviews/client-review"
 import ImageSlider from "../images/image-slider"
 import florist from "../../../static/images/about-page/florist.png"
 
@@ -20,9 +22,18 @@ function AboutUs() {
         <div className="about-page-wrapper">
             <ImageSlider carouselImages={carouselImages}/>
             <div className="box-container">
-                <div className="box">unique</div>
-                <div className="box">beautiful</div>
-                <div className="box">trusted</div>
+                <CustumerReview                   
+                    review="they did such a great job"
+                    client="- Marie Claire"
+                />
+                <CustumerReview                    
+                    review="Another review"
+                    client="- Kate"
+                />
+                <CustumerReview
+                    review="Loved their work"
+                    client="- Marie Claire"
+                />
             </div>
             <div className="mission-statement-container">
                 <div className="about-us-background-div-img"

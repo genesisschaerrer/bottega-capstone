@@ -2,34 +2,42 @@ import React, {useState, useEffect} from "react"
 import axios from "axios"
 import {Link} from "react-router-dom"
 
+
+import ProductCard from "../product-cards/product-cards"
+
+
 const shopFlowers = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
+        console.log("got to useEffect")
         axios.get("http://localhost:4000/")
         .then(response => {
+            console.log("here is response", response)
            setProducts(response.data)
         })
         .catch(error => console.log("error, ", error))
     }, [])
 
-        const plantProducts = products.filter(products => products.category === "flower").map(product => {
-                return (
-                    <Link to={`/shop-detail/${product._id}`} key={product._id}>
-                        <div className="product-card">
-                            <div className="product-name">{product.name}</div>
-                            <img className="card-img" src={product.imageUrl} />
-                            <div className="product-price">${product.price}.00</div>
-                        </div> 
-                    </Link>
-                )
-            })     
-        console.log(products)  
-        console.log(plantProducts)
+
+    console.log(products)
+
+
+        const flowerProducts = () => products.filter(product => product.category === "flower").map(product => {
+            return (
+                <ProductCard 
+                    key={product._id}
+                    _id={product._id}
+                    name={product.name}
+                    imageUrl={product.imageUrl}
+                    price={product.price}
+                />
+            )
+        })
 
     return (
         <div className="product-container">
-            {plantProducts}
+            {flowerProducts()}
         </div>
     )
 }
