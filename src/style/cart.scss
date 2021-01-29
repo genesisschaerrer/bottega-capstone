@@ -1,30 +1,42 @@
 .checkout-review-container {
-    width: 35%;
+    width: 45%;
     padding: 5em;
     background-color: #ddbea9;
     margin: 6em auto;
 
     .cart-header {
         text-align: center;
-        font-size: 3rem;
+        font-size: 3.5rem;
+        letter-spacing: 6px;
+        border-bottom: .7px solid #fff;
         font-weight: bold;
         letter-spacing: 4px;
-        margin-bottom: .6em;
+        margin-bottom: 0;
         color: #fff;
         position: relative;
     }
 
     .order-summary-container {
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
 
         .summary-product-name {
+            margin: 0 auto;
             width: 85%;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            padding-top: 2.5em;
+            padding-bottom: .7em;
+            text-transform: uppercase;
             color: #fff;
         }
 
         .product-summary-wrapper {
-            width: 85%;
+            margin: 0 auto;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -35,11 +47,50 @@
             }
 
             .prduct-price {
-                font-size: 1.5rem;
+                font-size: 2.6rem;
             }
 
             .remove-cart-item {
-                background-color: transparent;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                border: 1px solid $darkgray;
+                padding: .7em 1.4em;
+
+                &:hover{
+                    border: 1px solid #6a040f;
+                    background-color: #6a040f;
+                    color: white;
+                }
+
+            }
+        }
+
+        .total-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 2.5px;
+            color: white;
+            margin-top: 3em;
+            margin-bottom: 1.5em;
+            align-self: flex-end;
+    
+        }
+    
+        .place-order-btn {
+        align-self: flex-end;
+        margin-top: .5em;
+        letter-spacing: 2px;
+        background-color: transparent;
+        border: 1px solid $darkgray;
+        font-size: 1.4rem;
+        padding: .7em 1.4em;
+    
+            &:hover,:active {
+                border: 1px solid #003d23;
+                background-color: #003d23;
+                color: #fff;
+                outline: none;
             }
         }
     }
