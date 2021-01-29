@@ -1,0 +1,47 @@
+.checkout-review-container {
+    width: 35%;
+    padding: 5em;
+    background-color: #ddbea9;
+    margin: 6em auto;
+
+    .cart-header {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: 4px;
+        margin-bottom: .6em;
+        color: #fff;
+        position: relative;
+    }
+
+    .order-summary-container {
+
+        .summary-product-name {
+            width: 85%;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .product-summary-wrapper {
+            width: 85%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .product-thumbnail {
+                
+                height: 20vh;
+            }
+
+            .prduct-price {
+                font-size: 1.5rem;
+            }
+
+            .remove-cart-item {
+                background-color: transparent;
+            }
+        }
+    }
+
+}

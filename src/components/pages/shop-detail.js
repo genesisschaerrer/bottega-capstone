@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from "react"
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import axios from "axios"
 
 
@@ -10,9 +10,7 @@ const ShopDetail = () => {
     const [cart, setCart] = useContext(CartContext)
     const [products, setProducts] = useState([])
     let [quantity, setQuantity] = useState(0)
-    // const {cart, setCart} = AppContext()
 
-    // console.log(products)
 
     useEffect(() => {
         axios.get("http://localhost:4000/")
@@ -32,7 +30,7 @@ const ShopDetail = () => {
         setCart([...cart, ...items])
     }
 
-    console.log(cart)
+    // console.log(cart)
 
     const productDetail = products.filter(products => products._id === id).map(product => {
         return (
@@ -50,7 +48,8 @@ const ShopDetail = () => {
                                 <div>{quantity}</div>
                                 <button className="add" onClick={() => setQuantity(quantity + 1)}>+</button>
                             </div>
-                            <button className="btn" onClick={quantity > 0 ? addToCart: null}>Add To Cart</button>
+                            <div className="btn" onClick={quantity > 0 ? addToCart: null}>Add To Cart</div>
+                            <Link to="/cart" className="btn">CHECKOUT</Link>
                          </div>
                     </div>
 
@@ -66,20 +65,3 @@ const ShopDetail = () => {
 }
 
 export default ShopDetail
-//SEE THIS TO REMOVE FROM YOUR CART
-// const removeCartItem = e => {
-    // console.log(cart)
-    // let removedItem = cart.pop()
-    // setCart(cart.filter(products => {
-    //     return products !== removedItem
-    // }))
-// }
-
-// const reducer = (state, action) => {
-//     switch(action.type){
-//         case "setCount":
-//             return {...state, count: action.count + action.amt}
-//     }
-// }
-
-    // const [state, dispatch] = useReducer(reducer, {count: 0})
