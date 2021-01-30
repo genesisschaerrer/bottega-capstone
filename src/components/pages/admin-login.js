@@ -58,7 +58,7 @@ const AdminLogin = () => {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 />
-                {/* {loggedIn ? <Link to="/admindashboard" type="submit">Submit</Link>: <button type="submit">Submit</button>} */}
+                
                 <button type="submit">Submint</button>
             </form>
 
