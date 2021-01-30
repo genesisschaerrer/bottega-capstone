@@ -48,7 +48,7 @@ const App = () => {
             <Route path="/shop-flowers" component={shopFlowers} />
           </Switch>
 
-        {/* <Footer /> */}
+          <Footer />
         </Router>
       </div>
       </CartProvider>

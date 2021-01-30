@@ -1,0 +1,91 @@
+.admin-dashboard-container {
+    display: flex;
+    width: 85%;
+    flex-direction: column;
+
+    .dashboard-title {
+        align-self: center;
+        font-size: 3.5rem;
+        letter-spacing: 4px;
+        margin: 2em 0;
+    }
+
+    .create-product-container {
+        display: flex;
+        flex-direction: column;
+        background-color: #A5A58D;
+
+        .post-form-title {
+            font-size: 2.7rem;
+            letter-spacing: 2.5px;
+            align-self: center;
+            margin: 1.3em 0;
+            color: #fff;
+        }
+
+        .new-product-form {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            align-items: center;
+            justify-content: center;
+
+            .form-input {
+                width: 100%;
+                padding: 1em;
+                margin: 1em 0;
+                outline: none;
+            }
+
+            .add-margin {
+                margin-bottom: 5em;
+            }
+
+            .add-less-margin {
+                margin-bottom: 1.2em;
+            }
+
+            .description-input {
+                outline: none;
+                height: 7em;
+                width: 100%;
+                padding: 1em;
+            }
+
+            label {
+                color: #fff;
+                font-size: 1.2em;
+                margin-top: 2em;
+                align-self: flex-start;
+            }
+
+            button {
+                background-color: transparent;
+                font-size: 1.7rem;
+                letter-spacing: 2px;
+                border: 1px solid #fff;
+                color: #fff;
+                padding: .5em 1em;
+                margin-top: 2em;
+                margin-bottom: 3em;
+                outline: none;
+
+                &:hover {
+                    background-color: #fff;
+                    color: $darkgray;
+                }
+            }
+        }
+    }
+
+    .all-current-products {
+
+        .all-products-header {
+            font-size: 2.7em;
+            text-align: center;
+            align-self: center;
+            letter-spacing: 2.5px;
+        }
+    }
+}

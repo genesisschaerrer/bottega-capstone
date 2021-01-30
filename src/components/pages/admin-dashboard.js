@@ -62,14 +62,14 @@ const AdminDashboard = () => {
                                     <img className="dashboard-thumbnail" src={product.imageUrl} />
                                 </div>
                                 <div className="block-two">
-                                    <div>{product._id}</div>
-                                    <div>{product.description}</div>
-                                    <div>{product.price}</div>
-                                    <div>{product.inventory}</div>
+                                    <div><span style={{fontWeight:"bold"}}>PRODUCT ID: </span>{product._id}</div>
+                                    <div><span style={{fontWeight:"bold"}}>DESCRIPTION: </span>{product.description}</div>
+                                    <div><span style={{fontWeight:"bold"}}>PRICE: </span>${product.price}.00</div>
+                                    <div><span style={{fontWeight:"bold"}}>INVENTORY AMOUNT: </span>{product.inventory}</div>
                                 </div>
                                 <div className="block-three">
-                                    <div onClick={() => handleDelete(product._id)}>DELETE</div>
-                                    {/* <div onClick={() => setProductToEdit(product)}>EDIT</div> */}
+                                    <div className="action-btn" onClick={() => handleDelete(product._id)}>DELETE</div>
+                                    <div className="action-btn" onClick={() => setProductToEdit(product)}>EDIT</div>
                                 </div>
                             </div>
                             )
@@ -77,45 +77,53 @@ const AdminDashboard = () => {
 
     return (
         <div className="admin-dashboard-container">
-            <h1>ADMIN DASHBOARD</h1>
+            <h1 className="dashboard-title">ADMIN DASHBOARD</h1>
 
             <div className="create-product-container">
-                <h2>POST NEW PRODUCT</h2>
-                <form>
+                <h2 className="post-form-title">POST NEW PRODUCT</h2>
+                <form className="new-product-form">
                     <input 
+                        className="form-input add-margin"
                         type="text"
-                        placeholder="NAME"
+                        placeholder="PRODUCT NAME"
                         value={name}
                         onChange={e => setName(e.target.value)}
                     />
 
-                    <input 
+                    <textarea 
+                        className="description-input add-less-margin"
                         type="text"
-                        placeholder="DESCRIPTION"
+                        placeholder="PRODUCT DESCRIPTION"
                         value={description}
                         onChange={e=> setDescription(e.target.value)}
                     /> 
 
+                    <label>PRODUCT PRICE</label>
                     <input 
+                        className="form-input"
                         type="number"
-                        placeholder="PRICE"
+                        placeholder="PRODUCT PRICE"
                         value={price}
                         onChange={e => setPrice(e.target.value)}
                     /> 
 
                     <label>CHOOSE CATEGORY</label>
-                    <select name="category" onChange={e => {
+                    <select 
+                    className="form-input"
+                    name="category" 
+                    onChange={e => {
                         const selectedCategory = e.target.value
                         setCategory(selectedCategory)
                     }}>
-                        <optgroup label="CHOOSE OPTION">
+                        <optgroup label="CHOOSE OPTION" className="form-input">
                             <option value="flower">flower</option>
                             <option value="plant">plant</option>
                         </optgroup>
                     </select>
-
-
+                    
+                    <label>INVENTORY AMOUNT</label>
                     <input 
+                        className="form-input"
                         type="number"
                         placeholder="INVENTORY"
                         value={inventory}
@@ -128,11 +136,11 @@ const AdminDashboard = () => {
 
             <div className="update-product-container"> 
                 <h2>UPDATE PRODUCT</h2>
-                <ProductForm />
+                {/* <ProductForm /> */}
             </div>
 
             <div className="all-current-products">
-                <h2>ALL CURRENT PRODUCTS</h2>
+                <h2 className="all-products-header">ALL CURRENT PRODUCTS</h2>
                 <div className="dashboard-products-container">
                     {displayProducts}
                 </div>

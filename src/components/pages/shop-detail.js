@@ -48,8 +48,10 @@ const ShopDetail = () => {
                                 <div>{quantity}</div>
                                 <button className="add" onClick={() => setQuantity(quantity + 1)}>+</button>
                             </div>
-                            <div className="btn" onClick={quantity > 0 ? addToCart: null}>Add To Cart</div>
-                            <Link to="/cart" className="btn">CHECKOUT</Link>
+                            <div className="btn-wrapper">
+                                <div className="btn" onClick={quantity > 0 ? addToCart: null}>Add To Cart</div>
+                                <Link to="/cart" className="btn">CHECKOUT</Link>
+                            </div>
                          </div>
                     </div>
 

@@ -23,15 +23,15 @@ function AboutUs() {
             <ImageSlider carouselImages={carouselImages}/>
             <div className="box-container">
                 <CustumerReview                   
-                    review="they did such a great job"
+                    review="Moss and Timber always has the highest quality flowers, they are so flexible and deliver everything on time."
                     client="- Marie Claire"
                 />
                 <CustumerReview                    
-                    review="Another review"
+                    review="We hired Moss and Timber as the florist for our wedding and they went above and beyond! They met every single one of our expectations"
                     client="- Kate"
                 />
                 <CustumerReview
-                    review="Loved their work"
+                    review="The owner is so lovely and nice, she pays the highest attention to detail!"
                     client="- Marie Claire"
                 />
             </div>
