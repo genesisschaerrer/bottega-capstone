@@ -81,56 +81,19 @@ const AdminDashboard = () => {
 
             <div className="create-product-container">
                 <h2 className="post-form-title">POST NEW PRODUCT</h2>
-                <form className="new-product-form">
-                    <input 
-                        className="form-input add-margin"
-                        type="text"
-                        placeholder="PRODUCT NAME"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                    />
-
-                    <textarea 
-                        className="description-input add-less-margin"
-                        type="text"
-                        placeholder="PRODUCT DESCRIPTION"
-                        value={description}
-                        onChange={e=> setDescription(e.target.value)}
-                    /> 
-
-                    <label>PRODUCT PRICE</label>
-                    <input 
-                        className="form-input"
-                        type="number"
-                        placeholder="PRODUCT PRICE"
-                        value={price}
-                        onChange={e => setPrice(e.target.value)}
-                    /> 
-
-                    <label>CHOOSE CATEGORY</label>
-                    <select 
-                    className="form-input"
-                    name="category" 
-                    onChange={e => {
-                        const selectedCategory = e.target.value
-                        setCategory(selectedCategory)
-                    }}>
-                        <optgroup label="CHOOSE OPTION" className="form-input">
-                            <option value="flower">flower</option>
-                            <option value="plant">plant</option>
-                        </optgroup>
-                    </select>
-                    
-                    <label>INVENTORY AMOUNT</label>
-                    <input 
-                        className="form-input"
-                        type="number"
-                        placeholder="INVENTORY"
-                        value={inventory}
-                        onChange={e => setInvetory(e.target.value)}
-                    />   
-                    <button type="submit" onClick={handlePost}>SUBMIT</button>  
-                 </form>       
+                <ProductForm 
+                    name={name}
+                    setName={setName}
+                    description={description}
+                    setDescription={setDescription}
+                    price={price}
+                    setPrice={setPrice}
+                    category={category}
+                    setCategory={setCategory}
+                    inventory={inventory}
+                    setInvetory={setInvetory}
+                    handlePost={handlePost}
+                />        
             </div>
 
 
