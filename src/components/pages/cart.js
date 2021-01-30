@@ -3,7 +3,7 @@ import axios from "axios"
 
 import {CartContext} from "../context/cart-context"
 
-const Cart = () => {
+const Cart = () => { 
     const [cart, setCart] = useContext(CartContext)
     let totalPrice = cart.map(cartItem => cartItem.price)
     totalPrice = totalPrice.reduce((acc, curr) => acc + curr, 0)

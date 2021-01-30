@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useRef} from "react"
 import axios from "axios"
 
 
@@ -6,9 +6,11 @@ import ProductForm from "../forms/product-form"
 
 
 const AdminDashboard = () => {
+    const imageRef = useRef(null)
     const [products, setProducts] = useState([])
     const [productToEdit, setProductToEdit] = useState([])
     const [name, setName] = useState("")
+    const [productImage, setProductImage] = useState("")
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState(0)
     const [category, setCategory] = useState("flower")
@@ -23,6 +25,22 @@ const AdminDashboard = () => {
 
         //return something but what TODO
     }, [products])
+
+    const productImageHandleDrop = () => {
+        return {
+            addedfile: file => {
+                console.log(file)
+                const formData = new FormData()
+
+                formData.append("upload_preset", "moss-timber-products")
+                formData.append("file", file)
+
+                axios.post("https://api.cloudinary.com/v1_1/genesisschaerrer/image/upload", formData)
+                    .then(res => console.log(res)) 
+                    .catch(err => console.log(err))
+            }
+        }
+    }
 
 
     const handlePost = (e) => {
@@ -93,6 +111,8 @@ const AdminDashboard = () => {
                     inventory={inventory}
                     setInvetory={setInvetory}
                     handlePost={handlePost}
+                    productImageHandleDrop={productImageHandleDrop}
+                    imageRef={imageRef}
                 />        
             </div>
 
