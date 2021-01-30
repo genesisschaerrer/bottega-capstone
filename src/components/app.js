@@ -18,18 +18,20 @@ import AdminDashboard from "./pages/admin-dashboard";
 import shopFlowers from "./pages/shop-flowers"
 import shopPlants from "./pages/shop-plants"
 import { CartProvider } from "./context/cart-context";
+import {AdminProvider} from "./context/admin-context"
 
 
 // const theme = {
 //   light: {
 //     colro: "red"
-//   },
+//   }, 
 //   dark: {}
 // }
 // <context.provider value={{cart: cart, setCart: setCart}}
 const App = () => {
 
     return (
+      <AdminProvider>
       <CartProvider>
       <div className='app'>
         <Router>
@@ -52,6 +54,7 @@ const App = () => {
         </Router>
       </div>
       </CartProvider>
+      </AdminProvider>
     )
 }
 

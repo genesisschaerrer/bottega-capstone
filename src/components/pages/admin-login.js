@@ -1,13 +1,18 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import { useHistory } from "react-router-dom"
 
+import AdminContext from "../context/admin-context"
+
 const AdminLogin = () => {
-    const [username, setUsername] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    // const [username, setUsername] = useContext(AdminContext)
+    // const [email, setEmail] = useContext(AdminContext)
+    // const [password, setPassword] = useContext(AdminContext)
+    // const [loggedIn, setLoggedIn] = useContext(AdminContext)
+    const [username, setUsername] = useState("user")
+    const [email, setEmail] = useState("gen@gmail")
+    const [password, setPassword] = useState("12345678")
     const [loggedIn, setLoggedIn] = useState(false)
     const history = useHistory()
-
 
 
     const handleSubmit = (e) => {
@@ -23,7 +28,7 @@ const AdminLogin = () => {
         } else {
             console.log("wrong credentials")
         }
-     
+      
     }
 
 
@@ -59,7 +64,7 @@ const AdminLogin = () => {
                 onChange={e => setPassword(e.target.value)}
                 />
                 
-                <button type="submit">Submint</button>
+                <button type="submit">Submit</button>
             </form>
 
         </div>
