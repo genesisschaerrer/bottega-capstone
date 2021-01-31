@@ -1,0 +1,19 @@
+.carousel-page-container {
+    width: 80%;
+
+    .carousel-form {
+        width: 50%;
+    }
+
+    .carousel-img-container {
+        width: 50%;
+
+        .carousel-flex{
+            display: flex;
+
+            .carousel-img {
+                width: 200px;
+            }
+        }
+    }
+}
