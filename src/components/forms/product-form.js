@@ -23,6 +23,7 @@ const ProductForm = (props) => {
     }
 
     useEffect(() => {
+        if(Object.keys(props.productToEdit).length){
         const {
             name,
             description,
@@ -39,6 +40,7 @@ const ProductForm = (props) => {
         props.setEditMode(true)
         props.setApiUrl(`http://localhost:4000/product/${props.productToEdit._id}`)
         props.setApiAction("patch")
+        }
     },[props.productToEdit])
 
 

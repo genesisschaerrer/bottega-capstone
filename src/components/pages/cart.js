@@ -41,7 +41,7 @@ const Cart = () => {
     })
 
     const handleSubmit = () => {
-        axios.patch("http://localhost/purchase/update-inventory", cart)
+        axios.patch("http://localhost:4000/purchase/update-inventory", cart)
             .then(() => setCart([]))
             .catch(error => console.log("place order error", error))
     }

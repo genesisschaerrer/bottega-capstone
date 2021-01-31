@@ -85,6 +85,24 @@
         }
     }
 
+    .edit-carousel-link {
+        margin: 5em auto;
+        text-decoration: none;
+        color: #A5A58D;
+        background-color: #fff;
+        padding: .7em 1.5em;
+        border: 1px #fff solid;
+        font-size: 2rem;
+        letter-spacing: 3.5px;
+        margin-bottom: 5em;
+
+        &:hover {
+            border: 1px solid #A5A58D;
+            background-color: #A5A58D;
+            color: #A5A58D;
+        }
+    }
+
     .all-current-products {
 
         .all-products-header {

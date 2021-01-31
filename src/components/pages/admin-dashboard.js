@@ -23,15 +23,17 @@ const AdminDashboard = () => {
     const [category, setCategory] = useState("flower")
     const [inventory, setInvetory] = useState(0)
 
-    useEffect(() => {
+    const getAllProducts = () => {
         axios.get("http://localhost:4000/")
         .then(response => {
            setProducts(response.data)
         })
         .catch(error => console.log("error, ", error))
+    }
 
-        //TODO return a function.... now sure what...
-    }, [products])
+    useEffect(() => {
+        getAllProducts()
+    }, [])
 
     const productImageHandleDrop = () => {
         return {
@@ -64,6 +66,8 @@ const AdminDashboard = () => {
                 setCategory("flower")
                 setInvetory(0)
                 imageRef.current.dropzone.removeAllFiles()
+                setProductToEdit({})
+                getAllProducts()
             }) 
             .catch(err => console.log("error: ", err))
     }
@@ -71,7 +75,7 @@ const AdminDashboard = () => {
     const handleDelete = (id) => {
         console.log(id)
         axios.delete(`http://localhost:4000/product/${id}`)
-            .then(res => console.log(res))
+            .then(() => getAllProducts())
             .catch(err => console.log("Delete error: ", err))
 
     }
@@ -134,9 +138,8 @@ const AdminDashboard = () => {
             </div>
 
 
-            <div className="update-product-container"> 
-                <Link to="/edit-carousel">EDIT CAROUSEL</Link>
-            </div>
+ 
+            <Link className="edit-carousel-link" to="/edit-carousel">EDIT CAROUSEL</Link>
 
             <div className="all-current-products">
                 <h2 className="all-products-header">ALL CURRENT PRODUCTS</h2>

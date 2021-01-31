@@ -11,11 +11,15 @@ const EditCarousel = () => {
     const [carouselImgUrl, setCarouselImgUrl] = useState("")
     const imageRef = useRef(null)
 
-    useEffect(() => {
+    const getAllCarouselImages = () => {
         axios.get("http://localhost:4000/about")
-            .then(response => setCarouselImages(response.data))
-            .catch(error => console.log(error))
-    }, [carouselImages])
+        .then(response => setCarouselImages(response.data))
+        .catch(error => console.log(error))
+    }
+
+    useEffect(() => {
+        getAllCarouselImages()
+    }, [])
 
     const componentConfig = () => {
         return {
@@ -54,13 +58,14 @@ const EditCarousel = () => {
             .then(() => {
                 setCarouselImgUrl("")
                 imageRef.current.dropzone.removeAllFiles()
+                getAllCarouselImages()
             })
             .catch(error => console.log("error: ", error))
     }
 
     const handleDelete = (id) => {
         axios.delete(`http://localhost:4000/about/${id}`)
-            .then(res => console.log(res))
+            .then(() => getAllCarouselImages())
             .catch(error => console.log("Delete error: ", error))
     }
 
