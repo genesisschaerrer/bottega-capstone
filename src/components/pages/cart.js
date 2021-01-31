@@ -5,9 +5,17 @@ import {CartContext} from "../context/cart-context"
 
 const Cart = () => { 
     const [cart, setCart] = useContext(CartContext)
-    let totalPrice = cart.map(cartItem => cartItem.price)
-    totalPrice = totalPrice.reduce((acc, curr) => acc + curr, 0)
+    let totalPrice = []
 
+    let totalPriceBeforeTaxes = cart.map(cartItem => cartItem.price)
+    totalPriceBeforeTaxes = totalPriceBeforeTaxes.reduce((acc, curr) => acc + curr, 0)
+    totalPrice.push(totalPriceBeforeTaxes)
+    let taxes = totalPriceBeforeTaxes * .0485
+    totalPrice.push(taxes)
+    let shipping = 16
+    totalPrice.push(shipping)
+    totalPrice = totalPrice.reduce((acc, curr) => acc + curr, 0)
+    
 
     const removeCartItem = (id) => {
         let indexStart = cart.findIndex(x => x._id === id)
@@ -18,9 +26,6 @@ const Cart = () => {
 
         setCart(newCart)
     }
-
-
-    console.log(cart)
     
     let orderSummary = cart.map((product, idx) => {
         return (
@@ -36,11 +41,9 @@ const Cart = () => {
     })
 
     const handleSubmit = () => {
-        cart.forEach(item => {
-            return (
-                axios.patch("http://localhost/patch/:id") 
-            )
-        })
+        axios.patch("http://localhost/purchase/update-inventory", cart)
+            .then(() => setCart([]))
+            .catch(error => console.log("place order error", error))
     }
 
     return (
@@ -48,7 +51,15 @@ const Cart = () => {
             <h1 className="cart-header">ORDER SUMMARY</h1>
             <div className="order-summary-container">
                 {orderSummary}
-                <div className="total-price">TOTAL PRICE: ${totalPrice}.00</div>
+
+                {cart.length > 0 ?                 
+                <div className="price-wrapper">
+                    <div>TOTAL PRICE: ${totalPriceBeforeTaxes}.00</div>
+                    <div>Taxes: ${taxes}</div>
+                    <div>SHIPPING: ${shipping}.00</div>
+                    <div className="total-price">FINAL TOTAL: ${totalPrice}</div>
+                </div>:
+                null}
 
                 <button className="place-order-btn" onClick={handleSubmit}>PLACE ORDER</button>
             </div>
