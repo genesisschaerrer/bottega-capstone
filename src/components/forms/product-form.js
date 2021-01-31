@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import DropzoneComponent from "react-dropzone-component"
 
 
@@ -21,6 +21,26 @@ const ProductForm = (props) => {
             maxFiles: 1
         }
     }
+
+    useEffect(() => {
+        const {
+            name,
+            description,
+            price,
+            category, 
+            inventory,
+        } = props.productToEdit
+
+        props.setName(name)
+        props.setDescription(description)
+        props.setPrice(price)
+        props.setCategory(category)
+        props.setInvetory(inventory)
+        props.setEditMode(true)
+        props.setApiUrl(`http://localhost:4000/product/${props.productToEdit._id}`)
+        props.setApiAction("patch")
+    },[props.productToEdit])
+
 
     return (
         <form className="new-product-form">
@@ -80,7 +100,7 @@ const ProductForm = (props) => {
                         eventHandlers={props.productImageHandleDrop()}
                     />
 
-                    <button type="submit" onClick={props.handlePost}>SUBMIT</button> 
+                    <button type="submit" onClick={props.handleSubmit}>SUBMIT</button> 
                  </form>
     )
 }

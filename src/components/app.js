@@ -17,6 +17,7 @@ import AdminLogin from "./pages/admin-login"
 import AdminDashboard from "./pages/admin-dashboard";
 import shopFlowers from "./pages/shop-flowers"
 import shopPlants from "./pages/shop-plants"
+import EditCarousel from "./pages/edit-carousel"
 import { CartProvider } from "./context/cart-context";
 import {AdminProvider} from "./context/admin-context"
 
@@ -48,6 +49,7 @@ const App = () => {
             <Route path="/admindashboard" component={AdminDashboard} />
             <Route path="/shop-plants" component={shopPlants} /> 
             <Route path="/shop-flowers" component={shopFlowers} />
+            <Route path="/edit-carousel" component={EditCarousel} />
           </Switch>
 
           <Footer />

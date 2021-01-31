@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from "react"
+import {Link} from "react-router-dom"
 import axios from "axios"
 
 
@@ -7,10 +8,16 @@ import ProductForm from "../forms/product-form"
 
 const AdminDashboard = () => {
     const imageRef = useRef(null)
+
+    const [editMode, setEditMode] = useState(false)
+    const [apiUrl, setApiUrl] = useState("http://localhost:4000/")
+    const [apiAction, setApiAction] = useState('post')
+
     const [products, setProducts] = useState([])
-    const [productToEdit, setProductToEdit] = useState([])
+    const [productToEdit, setProductToEdit] = useState({})
+
     const [name, setName] = useState("")
-    const [productImage, setProductImage] = useState("")
+    const [imageUrl, setImageUrl] = useState("")
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState(0)
     const [category, setCategory] = useState("flower")
@@ -23,7 +30,7 @@ const AdminDashboard = () => {
         })
         .catch(error => console.log("error, ", error))
 
-        //return something but what TODO
+        //TODO return a function.... now sure what...
     }, [products])
 
     const productImageHandleDrop = () => {
@@ -36,22 +43,27 @@ const AdminDashboard = () => {
                 formData.append("file", file)
 
                 axios.post("https://api.cloudinary.com/v1_1/genesisschaerrer/image/upload", formData)
-                    .then(res => console.log(res)) 
+                    .then(res=> setImageUrl(res.data.secure_url)) 
                     .catch(err => console.log(err))
             }
         }
     }
 
-
-    const handlePost = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:4000/", {name, description, price, category, inventory})
+        axios({
+            method: apiAction,
+            url: apiUrl,
+            data: {name, description, price, category, inventory, imageUrl}
+        })
             .then(() => {
                 setName("")
+                setImageUrl("")
                 setDescription("")
                 setPrice(0)
                 setCategory("flower")
                 setInvetory(0)
+                imageRef.current.dropzone.removeAllFiles()
             }) 
             .catch(err => console.log("error: ", err))
     }
@@ -63,12 +75,6 @@ const AdminDashboard = () => {
             .catch(err => console.log("Delete error: ", err))
 
     }
-
-    // const handleEdit = (id) => {
-    //     console.log(id)
-    // }
-
-    // console.log(productToEdit)
 
 
 
@@ -110,16 +116,26 @@ const AdminDashboard = () => {
                     setCategory={setCategory}
                     inventory={inventory}
                     setInvetory={setInvetory}
-                    handlePost={handlePost}
+                    handleSubmit={handleSubmit}
+
                     productImageHandleDrop={productImageHandleDrop}
                     imageRef={imageRef}
+
+                    productToEdit={productToEdit}
+                    setProductToEdit={setProductToEdit}
+
+                    editMode={editMode}
+                    setEditMode={setEditMode}
+                    apiAction={apiAction}
+                    setApiAction={setApiAction}
+                    apiUrl={apiUrl}
+                    setApiUrl={setApiUrl}
                 />        
             </div>
 
 
             <div className="update-product-container"> 
-                <h2>UPDATE PRODUCT</h2>
-                {/* <ProductForm /> */}
+                <Link to="/edit-carousel">EDIT CAROUSEL</Link>
             </div>
 
             <div className="all-current-products">
