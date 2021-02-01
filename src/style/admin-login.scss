@@ -54,10 +54,16 @@
             border: none;
             background-color: #fff;
             color: $darkgray;
+            cursor: pointer;
 
             &:hover {
                 background-color: #a5a58d;
                 color: #fff;
+                box-shadow: $lightBoxShadow;
+            }
+
+            &:active {
+                box-shadow: $darkBoxShadow;
             }
         }
     }

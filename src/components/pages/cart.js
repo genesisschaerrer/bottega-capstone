@@ -58,10 +58,12 @@ const Cart = () => {
                     <div>Taxes: ${taxes}</div>
                     <div>SHIPPING: ${shipping}.00</div>
                     <div className="total-price">FINAL TOTAL: ${totalPrice}</div>
+                    <button className="place-order-btn" onClick={handleSubmit}>PLACE ORDER</button>
                 </div>:
-                null}
-
-                <button className="place-order-btn" onClick={handleSubmit}>PLACE ORDER</button>
+                <div className="empty-cart-container">
+                    <h1 className="oops">Oops...</h1>
+                    <div className="empty-cart">EMPTY CART</div>
+                </div>}
             </div>
         </div>
     )

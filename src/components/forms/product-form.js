@@ -30,6 +30,7 @@ const ProductForm = (props) => {
             price,
             category, 
             inventory,
+            imageUrl
         } = props.productToEdit
 
         props.setName(name)
@@ -39,7 +40,8 @@ const ProductForm = (props) => {
         props.setInvetory(inventory)
         props.setEditMode(true)
         props.setApiUrl(`http://localhost:4000/product/${props.productToEdit._id}`)
-        props.setApiAction("patch")
+        props.setApiAction("patch"),
+        props.setImageUrl(imageUrl)
         }
     },[props.productToEdit])
 
@@ -92,15 +94,28 @@ const ProductForm = (props) => {
                         placeholder="INVENTORY"
                         value={props.inventory}
                         onChange={e => props.setInvetory(e.target.value)}
-                    />  
+                    /> 
 
-                    <DropzoneComponent
+                    {props.imageUrl && props.editMode ? 
+                        <div style={{"display": "flex", 
+                                    "flexDirection": "column", 
+                                    "width": "50%", 
+                                    "alignItems": "center", 
+                                    "justifyContent": "space-between"}}>
+                            <img src={props.imageUrl} style={{"width": "200px", "marginTop": "3em", "marginBottom": "1.7em"}} />
+                            <div onClick={() => props.setImageUrl(null)} style={{"color": "#fff", 
+                                                                                "border": "1px solid #6a040f",
+                                                                                "background": "#6a040f",
+                                                                                "padding": ".7em"}}>DELETE IMAGE</div>
+                        </div>:
+                        <DropzoneComponent
                         className="image-uploader"
                         ref={props.imageRef}
                         config={componentConfig()} 
                         djsConfig={djsConfig()}
                         eventHandlers={props.productImageHandleDrop()}
-                    />
+                        />
+                    }
 
                     <button type="submit" onClick={props.handleSubmit}>SUBMIT</button> 
                  </form>

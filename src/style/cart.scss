@@ -68,32 +68,64 @@
             }
         }
 
-        .total-price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            letter-spacing: 2.5px;
-            color: white;
-            margin-top: 3em;
-            margin-bottom: 1.5em;
+        .price-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+
+            .total-price {
+                font-size: 2.5rem;
+                font-weight: bold;
+                letter-spacing: 2.5px;
+                color: white;
+                margin-top: 3em;
+                margin-bottom: 1.5em;
+                align-self: flex-end;
+        
+            }
+        
+            .place-order-btn {
             align-self: flex-end;
-    
+            justify-self: flex-end;
+            margin-top: .5em;
+            letter-spacing: 2px;
+            background-color: transparent;
+            border: 1px solid $darkgray;
+            font-size: 1.4rem;
+            padding: .7em 1.4em;
+        
+                &:hover,:active {
+                    border: 1px solid #003d23;
+                    background-color: #003d23;
+                    color: #fff;
+                    outline: none;
+                }
+            }
+
         }
-    
-        .place-order-btn {
-        align-self: flex-end;
-        justify-self: flex-end;
-        margin-top: .5em;
-        letter-spacing: 2px;
-        background-color: transparent;
-        border: 1px solid $darkgray;
-        font-size: 1.4rem;
-        padding: .7em 1.4em;
-    
-            &:hover,:active {
-                border: 1px solid #003d23;
-                background-color: #003d23;
+
+
+        .empty-cart-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 400px;
+
+
+            .oops {
+                font-family: 'Homemade Apple', cursive;
+                font-size: 7em;
+            }
+
+            .empty-cart {
+                align-self: flex-end;
                 color: #fff;
-                outline: none;
+                margin-top: -25px;
+                font-size: 2.4em;
+                letter-spacing: 5px;
             }
         }
     }

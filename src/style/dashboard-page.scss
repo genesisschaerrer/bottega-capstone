@@ -76,10 +76,15 @@
                 margin-top: 2em;
                 margin-bottom: 3em;
                 outline: none;
+                cursor: pointer;
 
                 &:hover {
                     background-color: #fff;
                     color: $darkgray;
+                }
+
+                &:active {
+                    box-shadow: $darkBoxShadow;
                 }
             }
         }
@@ -99,7 +104,12 @@
         &:hover {
             border: 1px solid #A5A58D;
             background-color: #A5A58D;
-            color: #A5A58D;
+            color: #fff;
+        }
+
+        &:active {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19),
+            0 0.3rem 0.3rem rgba(0, 0, 16, 0.23);
         }
     }
 

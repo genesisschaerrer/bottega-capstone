@@ -121,6 +121,8 @@ const AdminDashboard = () => {
                     inventory={inventory}
                     setInvetory={setInvetory}
                     handleSubmit={handleSubmit}
+                    imageUrl={imageUrl}
+                    setImageUrl={setImageUrl}
 
                     productImageHandleDrop={productImageHandleDrop}
                     imageRef={imageRef}

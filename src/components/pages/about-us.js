@@ -24,15 +24,15 @@ function AboutUs() {
             <div className="box-container">
                 <CustumerReview                   
                     review="Moss and Timber always has the highest quality flowers, they are so flexible and deliver everything on time."
-                    client="- Olivia  R"
+                    client="- Olivia"
                 />
                 <CustumerReview                    
                     review="We hired Moss and Timber as the florist for our wedding and they went above and beyond! They met every single one of our expectations"
-                    client="- Brandon  S"
+                    client="- Brandon"
                 />
                 <CustumerReview
                     review="The owner is so lovely and nice, she pays the highest attention to detail! She truly listens to what you want, and does a great job working with yout budget."
-                    client="- Marie  G"
+                    client="- Marie"
                 />
             </div>
             <div className="mission-statement-container">

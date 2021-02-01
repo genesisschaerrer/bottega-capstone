@@ -80,8 +80,8 @@ const EditCarousel = () => {
                         djsConfig={djsConfig()}
                         eventHandlers={handleDrop()}
 
-                    />
-                <button onClick={handlePost}>SUBMIT</button>
+                />
+                <button className="img-submit" onClick={handlePost}>SUBMIT</button>
             </div>
             
 
@@ -90,7 +90,7 @@ const EditCarousel = () => {
                     return (
                         <div className="carousel-flex" key={img._id}>
                             <img className="carousel-img" src={img.carouselImgUrl} />
-                            <div onClick={() => handleDelete(img._id)}>DELETE</div>
+                            <div className="delete-carousel" onClick={() => handleDelete(img._id)}>DELETE</div>
                         </div>
                     )
                 })}   
