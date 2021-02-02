@@ -41,16 +41,11 @@
         justify-content: space-around;
 
         .action-btn {
-            border: 1px solid #fff;
-            background-color: #fff;
-            font-size: 1.2em;
-            padding: .7em 1.3em;
+            font-size: 3em;
             color: $darkgray;
 
-            &:hover {
-                border: 1px solid #6a040f;
-                background-color: #6a040f;
-                color: #fff;
+            &:hover{
+                color: $darkRed;
             }
         }
     }

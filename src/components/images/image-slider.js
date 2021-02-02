@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const ImageSlider = (props) => {
     const [currentImage, setCurrentImage] = useState(0)
@@ -28,8 +28,8 @@ const ImageSlider = (props) => {
     return (
         <div className="about-page-container">
             <div className="carousel-container">
-                <div className="left-arrow" aria-label="previous slide" onClick={prevSlide}>{"<"}</div>
-                <div className="right-arrow" aria-label="next slide" onClick={nextSlide}>{">"}</div>
+                <div className="left-arrow" aria-label="previous slide" onClick={prevSlide}><FontAwesomeIcon style={{"fontSize": "1.5em"}} icon="arrow-alt-circle-left" /></div>
+                <div className="right-arrow" aria-label="next slide" onClick={nextSlide}><FontAwesomeIcon style={{"fontSize": "1.5em"}} icon="arrow-alt-circle-right" /></div>
                 {carousel}
             </div>
         </div>

@@ -55,17 +55,13 @@
                 margin-bottom: 1em;
             }
 
-            .delete-carousel {
-                border: 1px solid $darkRed;
-                background-color: $darkRed;
-                color: $white;
-                margin: .5em;
-                padding: .4em 1em;
-                font-size: 1.7em;
-                cursor: pointer;
+            .carousel-trash {
+                color: $darkgray;
+                font-size: 3em;
+                margin-bottom: 2em;
 
-                &:active {
-                    box-shadow: $darkBoxShadow;
+                &:hover {
+                    color: $darkRed;
                 }
             }
         }

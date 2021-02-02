@@ -1,12 +1,16 @@
-import React, {useState, useEffect, useRef} from "react"
+import React, {useState, useEffect, useRef, useContext} from "react"
 import axios from "axios"
 import DropzoneComponent from "react-dropzone-component"
+import {AdminContext} from "../context/admin-context"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 
 
 import "../../../node_modules/react-dropzone-component/styles/filepicker.css"
 import "../../../node_modules/dropzone/dist/min/dropzone.min.css"
 
 const EditCarousel = () => {
+    const [loggedIn, setLoggedIn] = useContext(AdminContext)
     const [carouselImages, setCarouselImages] = useState([])
     const [carouselImgUrl, setCarouselImgUrl] = useState("")
     const imageRef = useRef(null)
@@ -49,12 +53,18 @@ const EditCarousel = () => {
                     .then(res => setCarouselImgUrl(res.data.secure_url)) 
                     .catch(err => console.log(err))
             }
-        }
+        } 
     }
 
     const handlePost = (e) => {
-        e.preventDefault
-        axios.post("http://localhost:4000/about", {carouselImgUrl})
+        e.preventDefault()
+        const token = localStorage.getItem("auth-token")
+        axios.post("http://localhost:4000/about", {carouselImgUrl}, {
+            
+            headers: {
+                "auth-token": token
+            }
+        })
             .then(() => {
                 setCarouselImgUrl("")
                 imageRef.current.dropzone.removeAllFiles()
@@ -90,7 +100,7 @@ const EditCarousel = () => {
                     return (
                         <div className="carousel-flex" key={img._id}>
                             <img className="carousel-img" src={img.carouselImgUrl} />
-                            <div className="delete-carousel" onClick={() => handleDelete(img._id)}>DELETE</div>
+                            <a className="carousel-trash" onClick={() => handleDelete(img._id)}><FontAwesomeIcon icon="trash" /></a>
                         </div>
                     )
                 })}   

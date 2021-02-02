@@ -1,36 +1,39 @@
 import React, {useState, useContext} from "react"
 import { useHistory } from "react-router-dom"
+import axios from "axios"
 
-import AdminContext from "../context/admin-context"
+import {AdminContext} from "../context/admin-context"
+
 
 const AdminLogin = () => {
-    // const [username, setUsername] = useContext(AdminContext)
-    // const [email, setEmail] = useContext(AdminContext)
-    // const [password, setPassword] = useContext(AdminContext)
-    // const [loggedIn, setLoggedIn] = useContext(AdminContext)
-    const [username, setUsername] = useState("user")
-    const [email, setEmail] = useState("gen@gmail")
-    const [password, setPassword] = useState("12345678")
-    const [loggedIn, setLoggedIn] = useState(false)
+    const [loggedIn, setLoggedIn] = useContext(AdminContext)
+    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
     const history = useHistory()
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(username === "user" && email === "gen@gmail" && password === "12345678"){
-            setLoggedIn(true)
-            setUsername("")
-            setEmail("")
-            setPassword("")
-            console.log("im logged in")
-            history.push("/admindashboard")
 
-        } else {
-            console.log("wrong credentials")
-        }
-      
+        axios.post("http://localhost:4000/adminlogin", {username, email, password})
+            .then(response => {
+                const responseToken = response.headers["auth-token"]
+                document.cookie = "token=responseToken"
+                console.log(document.cookie)
+
+            })
+            .then(() => {
+                setLoggedIn("LOGGED_IN")
+                setUsername("")
+                setEmail("")
+                setPassword("")
+                console.log("im logged in")
+                history.push("/admindashboard")
+            })
+            .catch(error => console.log("error: ", error))
     }
-
+ 
 
     return (
         <div className="admin-login-container">
@@ -64,7 +67,7 @@ const AdminLogin = () => {
                 onChange={e => setPassword(e.target.value)}
                 />
                 
-                <button type="submit">Submit</button>
+                <button type="submit">Submit</button>      
             </form>
 
         </div>

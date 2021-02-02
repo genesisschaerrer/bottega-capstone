@@ -1,17 +1,18 @@
-import React, {useState} from "react"
+// import React, {useState, createContext} from "react"
+import {createContext} from "react"
+
+export const AdminContext = createContext()
 
 
-export const AdminContext = React.createContext()
 
-export const AdminProvider = (props) => {
-    const [username, setUsername] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [loggedIn, setLoggedIn] = useState(false)
+// export const AdminContext = createContext() 
 
-    return (
-        <AdminContext.Provider value={[username, setUsername, email, setEmail, password, setPassword, loggedIn, setLoggedIn]}>
-            {props.children}
-        </AdminContext.Provider>
-    )
-} 
+// export const AdminProvider = (props) => {
+//     const [loggedIn, setLoggedIn] = useState("LOGGED_OUT")
+
+//     return (
+//         <AdminContext.Provider value={[loggedIn, setLoggedIn]}>
+//             {props.children}
+//         </AdminContext.Provider>
+//     )
+// } 

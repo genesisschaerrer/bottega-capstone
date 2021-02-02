@@ -30,8 +30,6 @@ const ShopDetail = () => {
         setCart([...cart, ...items])
     }
 
-    // console.log(cart)
-
     const productDetail = products.filter(products => products._id === id).map(product => {
         return (
             <div className="show-product-container" key={product._id}>

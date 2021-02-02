@@ -1,0 +1,23 @@
+.no-page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80vh;
+
+
+    .oops {
+        font-family: 'Homemade Apple', cursive;
+        font-size: 10em;
+    }
+
+    .messege {
+        align-self: flex-end;
+        color: $maingreen;
+        font-weight: bold;
+        margin-top: -25px;
+        font-size: 3.6em;
+        letter-spacing: 5px;
+    }
+}

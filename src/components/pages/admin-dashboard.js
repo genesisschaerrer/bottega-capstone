@@ -1,12 +1,15 @@
-import React, {useState, useEffect, useRef} from "react"
+import React, {useState, useEffect, useRef, useContext} from "react"
 import {Link} from "react-router-dom"
 import axios from "axios"
 
 
 import ProductForm from "../forms/product-form"
+import {AdminContext} from "../context/admin-context"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 
 const AdminDashboard = () => {
+    const [loggedIn, setLoggedIn] = useContext(AdminContext)
     const imageRef = useRef(null)
 
     const [editMode, setEditMode] = useState(false)
@@ -49,7 +52,7 @@ const AdminDashboard = () => {
                     .catch(err => console.log(err))
             }
         }
-    }
+    } 
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -96,8 +99,8 @@ const AdminDashboard = () => {
                                     <div><span style={{fontWeight:"bold"}}>INVENTORY AMOUNT: </span>{product.inventory}</div>
                                 </div>
                                 <div className="block-three">
-                                    <div className="action-btn" onClick={() => handleDelete(product._id)}>DELETE</div>
-                                    <div className="action-btn" onClick={() => setProductToEdit(product)}>EDIT</div>
+                                    <a className="action-btn" onClick={() => handleDelete(product._id)}><FontAwesomeIcon icon="trash" className="trash" /></a> 
+                                    <a className="action-btn" onClick={() => setProductToEdit(product)}><FontAwesomeIcon icon="edit" /></a>
                                 </div>
                             </div>
                             )
