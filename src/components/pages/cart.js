@@ -2,6 +2,7 @@ import React, {useState, useContext, useEffect} from "react"
 import axios from "axios"
 
 import {CartContext} from "../context/cart-context"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Cart = () => { 
     const [cart, setCart] = useContext(CartContext)
@@ -34,14 +35,15 @@ const Cart = () => {
                 <div className="product-summary-wrapper">
                     <img className="product-thumbnail" src={product.imageUrl} alt={product.name} />
                     <div className="prduct-price">{`$${product.price}.00`}</div>
-                    <div className="remove-cart-item" onClick={() => removeCartItem(product._id)}>Delete Me</div>
+                    <FontAwesomeIcon icon="trash" className="trash" onClick={() => removeCartItem(product._id)}/>
+                    {/* <div className="remove-cart-item" onClick={() => removeCartItem(product._id)}>Delete Me</div> */}
                 </div>
             </div>
         )
     })
 
     const handleSubmit = () => {
-        axios.patch("http://localhost:4000/purchase/update-inventory", cart)
+        axios.patch("https://gms-ecommerce-node-api.herokuapp.com/purchase/update-inventory", cart)
             .then(() => setCart([]))
             .catch(error => console.log("place order error", error))
     }
@@ -53,11 +55,24 @@ const Cart = () => {
                 {orderSummary}
 
                 {cart.length > 0 ?                 
-                <div className="price-wrapper">
-                    <div>TOTAL PRICE: ${totalPriceBeforeTaxes}.00</div>
-                    <div>Taxes: ${taxes}</div>
-                    <div>SHIPPING: ${shipping}.00</div>
-                    <div className="total-price">FINAL TOTAL: ${totalPrice}</div>
+                <div className="price-container">
+                    
+                    <div className="price-breakdown-wrapper">
+                        <div className="price-text">
+                        <div>Subtotal:</div>
+                        <div>Taxes:</div>
+                        <div>Shipping:</div>
+                        <div className="total-price">FINAL TOTAL:</div>
+                        </div>
+
+                        <div className="price-numbers">
+                        <div>${totalPriceBeforeTaxes}.00</div>
+                        <div>${taxes}</div>
+                        <div>${shipping}.00</div>
+                        <div className="total-price">${totalPrice}</div>
+                        </div>
+                    </div>
+
                     <button className="place-order-btn" onClick={handleSubmit}>PLACE ORDER</button>
                 </div>:
                 <div className="empty-cart-container">

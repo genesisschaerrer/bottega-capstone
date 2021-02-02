@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
+
 const Home = () => {
 
     return (
@@ -24,7 +25,7 @@ const Home = () => {
 
                 <div className="shop-category-container">
                     <Link to="/shop-plants">
-                        <div className="shop-plants">SUCCULENTS</div>
+                        <div className="shop-plants">PLANTS</div>
                     </Link>
 
                     <Link to="shop-flowers">
@@ -37,7 +38,7 @@ const Home = () => {
             <Link className="shop-all-btn" to="/shopall">SHOP ALL</Link>
 
             <div className="address">
-                2141 HARMONY CIRCLE, ST. GEORGE UT 84790 | 435.555.5555
+                2141 HARMONY CIRCLE, ST. GEORGE UT 84790 | 435.555.5555 | moss&timber@gmail.com
             </div>
 
             <div className="map-social-media-container">

@@ -19,8 +19,9 @@
         background-position: center;
         justify-content: center;
         align-items: center;
-        font-size: 7rem;
-        letter-spacing: 9px;
+        font-size: 10rem;
+        font-weight: bold;
+        letter-spacing: .2em;
         opacity: 1.5;
         color: white;
         font-size: bold;
@@ -101,15 +102,16 @@
                 justify-content: center;
                 align-items: center;
                 background: url("../../static/images/home-page/flowers.png") no-repeat;
-                background-size: "cover";
-                background-position: "center";
+                background-size: cover;
+                background-position: center;
                 height: 400px;
-                font-size: 3.5rem;
-                width: 100%;
-                border: .7em solid #A5A58D;
+                font-size: 6rem;
+                letter-spacing: .3em;
+                font-weight: bold;
+                border: .5em solid #A5A58D;
+                color: white;
                 cursor: pointer;
-                box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19),
-                0 0.3rem 0.3rem rgba(0, 0, 16, 0.23);
+                box-shadow: $darkBoxShadow;
             }
 
             .shop-plants {
@@ -118,14 +120,15 @@
                 align-items: center;
                 height: 400px;
                 background: url("../../static/images/home-page/plants.png") no-repeat;
-                background-size: "cover";
-                background-position: "center";
-                width: 100%;
-                font-size: 3.5rem;
-                border: .7em solid #A5A58D;
+                background-position: center;
+                background-size: cover;
+                color: white;
+                font-size: 6rem;
+                letter-spacing: .3em;
+                font-weight: bold;
+                border: .5em solid #A5A58D;
                 cursor: pointer;
-                box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19),
-                0 0.3rem 0.3rem rgba(0, 0, 16, 0.23);
+                box-shadow: $darkBoxShadow;
 
             }
         }
@@ -141,9 +144,9 @@
         letter-spacing: 3.5px;  
 
         &:hover{
-            border: 1px #cb997e solid;
+            border: 1px $darkSand solid;
             background-color: #f4f3ee;
-            color: #cb997e;
+            color: $darkSand;
             box-shadow: 0 0.2rem 1rem rgba(0, 0, 5, 0.19),
             0 0.01rem 0.01rem rgba(0, 0, 5, 0.19);
         }
@@ -158,11 +161,13 @@
     }
 
     .map-social-media-container {
-        width: 60vw;
+        width: 100vw;
+        padding: 10em;
+        background-color: $sand;
         margin-top: 3em;
         margin-bottom: 6em;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         
         .map {
 

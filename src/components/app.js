@@ -5,7 +5,6 @@ import {
   Switch,
   Route
 } from "react-router-dom"
-
 import {library} from "@fortawesome/fontawesome-svg-core"
 import {FortAweomeIcon} from "@fortawesome/react-fontawesome"
 import {
@@ -15,7 +14,6 @@ import {
   faArrowAltCircleLeft,
   faArrowAltCircleRight,
 } from "@fortawesome/free-solid-svg-icons"
-
 
 
 
@@ -34,8 +32,6 @@ import EditCarousel from "./pages/edit-carousel"
 import NoPage from "./not-found/no-page"
 import { CartProvider } from "./context/cart-context";
 import { AdminContext } from "./context/admin-context";
-// import {AdminProvider} from "./context/admin-context"
-// import {AdminContext} from "../context/admin-context"
 
 
 
@@ -59,7 +55,6 @@ const App = () => {
   }
 
     return (
-      // <AdminProvider>
       <AdminContext.Provider value={[loggedIn, setLoggedIn]}>
       <CartProvider>
       <div className='app'>
@@ -85,7 +80,6 @@ const App = () => {
       </div>
       </CartProvider>
       </AdminContext.Provider>
-    // </AdminProvider>
     )
 }
 

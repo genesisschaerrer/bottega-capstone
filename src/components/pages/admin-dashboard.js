@@ -13,7 +13,7 @@ const AdminDashboard = () => {
     const imageRef = useRef(null)
 
     const [editMode, setEditMode] = useState(false)
-    const [apiUrl, setApiUrl] = useState("http://localhost:4000/")
+    const [apiUrl, setApiUrl] = useState("https://gms-ecommerce-node-api.herokuapp.com/")
     const [apiAction, setApiAction] = useState('post')
 
     const [products, setProducts] = useState([])
@@ -27,7 +27,7 @@ const AdminDashboard = () => {
     const [inventory, setInvetory] = useState(0)
 
     const getAllProducts = () => {
-        axios.get("http://localhost:4000/")
+        axios.get("https://gms-ecommerce-node-api.herokuapp.com/")
         .then(response => {
            setProducts(response.data)
         })
@@ -59,7 +59,10 @@ const AdminDashboard = () => {
         axios({
             method: apiAction,
             url: apiUrl,
-            data: {name, description, price, category, inventory, imageUrl}
+            data: {name, description, price, category, inventory, imageUrl},
+            headers: {
+                "auth-token": localStorage.getItem("token")
+            }
         })
             .then(() => {
                 setName("")
@@ -77,7 +80,11 @@ const AdminDashboard = () => {
 
     const handleDelete = (id) => {
         console.log(id)
-        axios.delete(`http://localhost:4000/product/${id}`)
+        axios.delete(`https://gms-ecommerce-node-api.herokuapp.com/product/${id}`, {
+            headers: {
+                "auth-token": localStorage.getItem("token")
+            }
+        })
             .then(() => getAllProducts())
             .catch(err => console.log("Delete error: ", err))
 

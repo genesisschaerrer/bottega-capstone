@@ -10,7 +10,7 @@ function AboutUs() {
     const [ carouselImages, setCarouselImages] = useState([])
 
     useEffect(() => {
-        axios("http://localhost:4000/about")
+        axios("https://gms-ecommerce-node-api.herokuapp.com/about")
         .then(response => {
             setCarouselImages(response.data)
         })
@@ -44,12 +44,8 @@ function AboutUs() {
                     }}
                 >
                     <div className="mission-statement-box-container">
-                        <div className="mission-statement-title">
-                            TITLE
-                        </div>
-                        <div className="mission-statement-message">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque.
-                        </div>
+                        <div className="mission-statement-title">OUR PROMISE</div>
+                        <div className="mission-statement-message">Moss & Timber is a boutique flower shop in St. George, Ut. At Moss & Timber we are dedicated to bringing you stunning floral designs that will elevate the ambiance of any setting.</div>
                     </div>
                 </div>
             </div>

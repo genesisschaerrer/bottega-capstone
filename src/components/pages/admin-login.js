@@ -11,16 +11,18 @@ const AdminLogin = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const history = useHistory()
-
+ 
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        axios.post("http://localhost:4000/adminlogin", {username, email, password})
+        axios.post("https://gms-ecommerce-node-api.herokuapp.com/adminlogin", {username, email, password})
             .then(response => {
-                const responseToken = response.headers["auth-token"]
-                document.cookie = "token=responseToken"
-                console.log(document.cookie)
+                // const responseToken = response.headers["auth-token"]
+                // document.cookie = `token=${response.headers["auth-token"]}`
+                // console.log(document.cookie)
+                localStorage.setItem("token", response.headers["auth-token"])
+                console.log(localStorage.getItem("token"))
 
             })
             .then(() => {
@@ -28,7 +30,6 @@ const AdminLogin = () => {
                 setUsername("")
                 setEmail("")
                 setPassword("")
-                console.log("im logged in")
                 history.push("/admindashboard")
             })
             .catch(error => console.log("error: ", error))

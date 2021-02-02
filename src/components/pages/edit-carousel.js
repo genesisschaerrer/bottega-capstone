@@ -16,7 +16,7 @@ const EditCarousel = () => {
     const imageRef = useRef(null)
 
     const getAllCarouselImages = () => {
-        axios.get("http://localhost:4000/about")
+        axios.get("https://gms-ecommerce-node-api.herokuapp.com/about")
         .then(response => setCarouselImages(response.data))
         .catch(error => console.log(error))
     }
@@ -58,11 +58,10 @@ const EditCarousel = () => {
 
     const handlePost = (e) => {
         e.preventDefault()
-        const token = localStorage.getItem("auth-token")
-        axios.post("http://localhost:4000/about", {carouselImgUrl}, {
-            
+        axios.post("https://gms-ecommerce-node-api.herokuapp.com/about", {carouselImgUrl}, {         
             headers: {
-                "auth-token": token
+                // "auth-token": document.cookie
+                "auth-token": localStorage.getItem("token")
             }
         })
             .then(() => {
@@ -74,7 +73,11 @@ const EditCarousel = () => {
     }
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:4000/about/${id}`)
+        axios.delete(`https://gms-ecommerce-node-api.herokuapp.com/about/${id}`, {
+            headers: {
+                "auth-token": localStorage.getItem("token")
+            }
+        })
             .then(() => getAllCarouselImages())
             .catch(error => console.log("Delete error: ", error))
     }

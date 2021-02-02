@@ -39,7 +39,7 @@ const ProductForm = (props) => {
         props.setCategory(category)
         props.setInvetory(inventory)
         props.setEditMode(true)
-        props.setApiUrl(`http://localhost:4000/product/${props.productToEdit._id}`)
+        props.setApiUrl(`https://gms-ecommerce-node-api.herokuapp.com/product/${props.productToEdit._id}`)
         props.setApiAction("patch"),
         props.setImageUrl(imageUrl)
         }

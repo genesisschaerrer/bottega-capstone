@@ -11,7 +11,7 @@ const shopFlowers = () => {
 
     useEffect(() => {
         console.log("got to useEffect")
-        axios.get("http://localhost:4000/")
+        axios.get("https://gms-ecommerce-node-api.herokuapp.com/")
         .then(response => {
             console.log("here is response", response)
            setProducts(response.data)

@@ -13,7 +13,7 @@ const ShopDetail = () => {
 
 
     useEffect(() => {
-        axios.get("http://localhost:4000/")
+        axios.get("https://gms-ecommerce-node-api.herokuapp.com/")
         .then(response => {
            setProducts(response.data)
         })
