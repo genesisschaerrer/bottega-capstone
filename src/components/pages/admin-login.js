@@ -16,11 +16,8 @@ const AdminLogin = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        axios.post("https://gms-ecommerce-node-api.herokuapp.com/adminlogin", {username, email, password})
+        axios.post("https://gms-ecommerce-node-api.herokuapp.com/adminlogin", {username, email, password}, {withCredentials: true})
             .then(response => {
-                // const responseToken = response.headers["auth-token"]
-                // document.cookie = `token=${response.headers["auth-token"]}`
-                // console.log(document.cookie)
                 localStorage.setItem("token", response.headers["auth-token"])
                 console.log(localStorage.getItem("token"))
 

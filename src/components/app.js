@@ -1,4 +1,4 @@
-import React, { Component, useContext, useState } from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
 import axios from "axios"
 import {
   BrowserRouter as Router,
@@ -53,6 +53,16 @@ const App = () => {
       <Route path="/edit-carousel" component={EditCarousel} />
     ]
   }
+
+  useEffect(() => {
+    axios.get("https://gms-ecommerce-client-react.herokuapp.com/check-login", {withCredentials: true})
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, [])
 
     return (
       <AdminContext.Provider value={[loggedIn, setLoggedIn]}>
