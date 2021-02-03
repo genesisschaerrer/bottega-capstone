@@ -57,13 +57,13 @@ const App = () => {
   useEffect(() => {
     axios.get("https://gms-ecommerce-client-react.herokuapp.com/check-login", {withCredentials: true})
       .then(res => {
-        console.log(res.data)
+        setLoggedIn("LOGGED_IN")
       })
       .catch(error => {
         console.log(error)
       })
   }, [])
-
+  
     return (
       <AdminContext.Provider value={[loggedIn, setLoggedIn]}>
       <CartProvider>
