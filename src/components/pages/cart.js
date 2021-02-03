@@ -36,7 +36,6 @@ const Cart = () => {
                     <img className="product-thumbnail" src={product.imageUrl} alt={product.name} />
                     <div className="prduct-price">{`$${product.price}.00`}</div>
                     <FontAwesomeIcon icon="trash" className="trash" onClick={() => removeCartItem(product._id)}/>
-                    {/* <div className="remove-cart-item" onClick={() => removeCartItem(product._id)}>Delete Me</div> */}
                 </div>
             </div>
         )

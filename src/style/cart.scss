@@ -5,6 +5,12 @@
     background-color: #ddbea9;
     margin: 6em auto;
 
+    @media(max-width: 600px){
+        width: 90%;
+        padding: 1em ;
+        padding-bottom: 3em;
+    }
+
     .cart-header {
         text-align: center;
         font-size: 3.5rem;
@@ -24,6 +30,10 @@
         display: flex;
         flex-direction: column;
 
+        @media(max-width: 600px){
+            align-items: center;
+        }
+
         .summary-product-name {
             margin: 0 auto;
             width: 85%;
@@ -34,6 +44,10 @@
             padding-bottom: .7em;
             text-transform: uppercase;
             color: #fff;
+
+            @media(max-width: 600px){
+                font-size: 2rem;
+            }
         }
 
         .product-summary-wrapper {
@@ -43,6 +57,10 @@
             justify-content: space-between;
             align-items: center;
 
+            @media(max-width: 600px){
+                flex-direction: column;
+            }
+
             .product-thumbnail {
                 
                 height: 20vh;
@@ -50,11 +68,20 @@
 
             .prduct-price {
                 font-size: 2.6rem;
+
+                @media(max-width: 600px){
+                    margin: .7em;
+                    font-size: 1.7rem;
+                }
             }
 
             .trash {
                 color: $white;
                 font-size: 3.4rem;
+
+                @media(max-width: 600px){
+                    font-size: 2.5rem;
+                }
 
                 &:hover{
                     color: $darkRed;
@@ -73,12 +100,20 @@
             flex-direction: column;
             align-items: flex-end;
 
+            @media(max-width: 600px){
+                align-items: center;
+            }
+
             .price-breakdown-wrapper {
                 margin-bottom: 1.5em;
                 width: 60%;
                 display: flex;
                 color: $white;
                 font-size: 1.6rem;
+
+                @media(max-width: 600px){
+                    width: 100%;
+                }
 
                 .price-text {
                     width: 60%;
@@ -88,6 +123,10 @@
                         padding: 3px;
                         font-weight: bold;
                         letter-spacing: 3px;
+
+                        @media(max-width: 600px){
+                            font-size: 1.5rem;
+                        }
                     }
                 }
 
@@ -99,6 +138,10 @@
                         font-size: 2rem;
                         padding: 3px;
                         font-weight: bold;
+
+                        @media(max-width: 600px){
+                            font-size: 1.5rem;
+                        }
                     }
 
                 }
@@ -115,6 +158,10 @@
             font-size: 1.4rem;
             padding: .7em 1.4em;
             border-radius: 25px;
+
+            @media(max-width: 600px){
+                align-self: center;
+            }
         
                 &:hover,:active {
                     border: 1px solid #003d23;
