@@ -41,4 +41,24 @@
             width: 45%;
         }
     }
+
+    @media(max-width: 600px){
+        .nav-bar {
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            height: 200px;
+
+            .menu-bar{
+                flex-direction: column;
+                align-items: center;
+                margin-top: 15px;
+
+                .mobile-home{
+                    display: none;
+                
+                }
+            }
+        }
+    } 
 }

@@ -22,7 +22,7 @@ const NavBar = () => {
             
                 <div className="menu-bar">
                     {loggedIn === "LOGGED_IN"? <NavLink to="/admindashboard" className="navbar-link" activeClassName="nav-link-active">Dashboard</NavLink>:null }
-                    <NavLink exact to="/" className="navbar-link" activeClassName="nav-link-active">Home</NavLink>
+                    <NavLink exact to="/" className="navbar-link mobile-home" activeClassName="nav-link-active">Home</NavLink>
                     <NavLink to="/shopall" className="navbar-link" activeClassName="nav-link-active">Shop All</NavLink>
                     <NavLink to="/about" className="navbar-link" activeClassName="nav-link-active">About</NavLink>
                     <NavLink to="/cart" className="navbar-link" activeClassName="nav-link-active"><FontAwesomeIcon style={{"fontSize": "1.5em"}} icon="shopping-cart" /> {cart.length}</NavLink>      

@@ -76,9 +76,9 @@
             margin-bottom: 5em;
 
             &:hover{
-                border: 1px #cb997e solid;
-                background-color: #f4f3ee;
-                color: #cb997e;
+                border: 1px $darkgray solid;
+                background-color: $darkgray;
+                color: white;
                 box-shadow: 0 0.2rem 1rem rgba(0, 0, 5, 0.19),
                 0 0.01rem 0.01rem rgba(0, 0, 5, 0.19);
             }
@@ -144,9 +144,9 @@
         letter-spacing: 3.5px;  
 
         &:hover{
-            border: 1px $darkSand solid;
-            background-color: #f4f3ee;
-            color: $darkSand;
+            border: 1px $darkgray solid;
+            background-color: $darkgray;
+            color: white;
             box-shadow: 0 0.2rem 1rem rgba(0, 0, 5, 0.19),
             0 0.01rem 0.01rem rgba(0, 0, 5, 0.19);
         }
@@ -163,7 +163,7 @@
     .map-social-media-container {
         width: 100vw;
         padding: 5em 10em 10em;
-        background-color: $sand;
+        background-color: rgb(235, 230, 223);
         margin-top: 3em;
         margin-bottom: 6em;
         display: flex;
