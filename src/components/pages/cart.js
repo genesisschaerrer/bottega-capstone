@@ -97,7 +97,7 @@ const Cart = () => {
                     stripeKey={process.env.REACT_APP_KEY}
                     token={makePayment}
                     name="goods"
-                    amount={totalPrice}
+                    amount={totalPrice * 100}
                     >
                     <button className="place-order-btn">PLACE ORDER</button> 
                     </StripeCheckout>
