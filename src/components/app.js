@@ -30,6 +30,8 @@ import shopFlowers from "./pages/shop-flowers"
 import shopPlants from "./pages/shop-plants"
 import EditCarousel from "./pages/edit-carousel"
 import NoPage from "./not-found/no-page"
+import SuccessPage from "./out-come/success-page"
+import FailurePage from "./out-come/failure-page"
 import { CartProvider } from "./context/cart-context";
 import { AdminContext } from "./context/admin-context";
 
@@ -63,7 +65,7 @@ const App = () => {
         console.log(error)
       })
   }, [])
-  
+
     return (
       <AdminContext.Provider value={[loggedIn, setLoggedIn]}>
       <CartProvider>
@@ -81,6 +83,8 @@ const App = () => {
             <Route path="/adminlogin" component={AdminLogin} />
             <Route path="/shop-plants" component={shopPlants} /> 
             <Route path="/shop-flowers" component={shopFlowers} />
+            <Route path="/successful-payment" component={SuccessPage} />
+            <Route path="/failed-payment" component={FailurePage} />
 
             {loggedIn === "LOGGED_IN" ? authorizedPages(): <NoPage />}
           </Switch>

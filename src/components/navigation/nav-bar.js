@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import logo from "../../../static/images/logos/logo.png"
 import Cart from "../pages/cart"
 import {CartContext} from "../context/cart-context"
+import {AdminContext} from "../context/admin-context"
 
 
 const NavBar = () => {
     const [cart, setCart] = useContext(CartContext)
+    const [loggedIn, setLoggedIn] = useContext(AdminContext)
 
     return (
         <div className="nav-container">
@@ -17,8 +19,9 @@ const NavBar = () => {
                 <NavLink exact to="/" activeClassName="nav-link-active">
                     <img className="navbar-logo" src={logo} />   
                 </NavLink>
-
+            
                 <div className="menu-bar">
+                    {loggedIn === "LOGGED_IN"? <NavLink to="/admindashboard" className="navbar-link" activeClassName="nav-link-active">Dashboard</NavLink>:null }
                     <NavLink exact to="/" className="navbar-link" activeClassName="nav-link-active">Home</NavLink>
                     <NavLink to="/shopall" className="navbar-link" activeClassName="nav-link-active">Shop All</NavLink>
                     <NavLink to="/about" className="navbar-link" activeClassName="nav-link-active">About</NavLink>

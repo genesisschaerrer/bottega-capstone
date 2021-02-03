@@ -1,0 +1,41 @@
+.success-page-container {
+    background-color: $white;
+    padding: 1em 10em;
+    margin: 3em;
+    width: 50%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+
+    .success-title {
+        font-family: 'Homemade Apple', cursive;
+        margin-top: .5em;
+        font-size: 10em;
+        color:$pink;
+    }
+
+    .success-messege{
+        font-size: 2em;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+
+    .success-name{
+        margin-bottom: -3em;
+    }
+
+    .success-name,.xo{
+        align-self: flex-end;
+        justify-self: flex-end;
+        font-size: 1.8em;
+        letter-spacing: 4px;
+    }
+
+    .xo{
+        color: $pink;
+        font-weight: bold;
+    }
+}
