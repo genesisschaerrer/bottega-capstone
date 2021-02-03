@@ -54,8 +54,8 @@ const Home = () => {
 
                 <div className="social-media-flex">
                     <div className="follow-us">FOLLOW US</div>
-                    <div>
-                        <a  href="https://www.instagram.com/bottega.capstone/" target="_blank" ><img className="social-media-post" style={{"height": "400px", "width": "400px"}} src={socialMedia}/></a>                   
+                    <div className="ig-post">
+                        <a  className="ig-link" href="https://www.instagram.com/bottega.capstone/" target="_blank" ><img className="social-media-post" style={{"height": "400px", "width": "400px"}} src={socialMedia}/></a>                   
                     </div>
                 </div>
                 {/* <div>
