@@ -34,6 +34,7 @@ import EditCarousel from "./pages/edit-carousel"
 import NoPage from "./not-found/no-page"
 import SuccessPage from "./out-come/success-page"
 import FailurePage from "./out-come/failure-page"
+import RegisterAdmin from "./pages/new-admin"
 import { CartProvider } from "./context/cart-context";
 import { AdminContext } from "./context/admin-context";
 
@@ -52,11 +53,13 @@ library.add(
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState("LOGGED_OUT")
+  
   const authorizedPages = () => {
 
     return [
       <Route path="/admindashboard" component={AdminDashboard} />,
-      <Route path="/edit-carousel" component={EditCarousel} />
+      <Route path="/edit-carousel" component={EditCarousel} />,
+      <Route path="/register-admin" component={RegisterAdmin} />
     ]
   }
 
