@@ -156,6 +156,7 @@ const AdminDashboard = () => {
             {isLoading? <FontAwesomeIcon icon="spinner" spin style={{"fontSize": "4em", "margin": "2em auto"}} />: null} 
  
             <Link className="edit-carousel-link" to="/edit-carousel">EDIT CAROUSEL</Link>
+            <Link className="add-admin-link" to="/register-admin">ADD NEW ADMIN</Link>
 
             <div className="all-current-products">
                 <h2 className="all-products-header">ALL CURRENT PRODUCTS</h2>

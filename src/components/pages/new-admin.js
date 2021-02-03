@@ -1,11 +1,13 @@
 import React, {useState, useContext} from "react"
 import { useHistory } from "react-router-dom"
 import axios from "axios"
+import {FontAwesomeIcon, FortAweomeIcon} from "@fortawesome/react-fontawesome"
 
 import {AdminContext} from "../context/admin-context"
 
 
 const RegisterAdmin = () => {
+    const [isLoading, setIsLoading] = useState(false)
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -15,6 +17,7 @@ const RegisterAdmin = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setIsLoading(true)
 
         axios.post("https://gms-ecommerce-node-api.herokuapp.com/register", {username, email, password}, {withCredentials: true})
             .then(response => {
@@ -22,7 +25,7 @@ const RegisterAdmin = () => {
                 setUsername("")
                 setEmail("")
                 setPassword("")
-                history.push("/admindashboard")
+                history.push("/adminlogin")
             })
             .catch(error => console.log("error: ", error))
     }
@@ -59,7 +62,9 @@ const RegisterAdmin = () => {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 />
-                <button type="submit">Submit</button>     
+                {isLoading? <FontAwesomeIcon icon="spinner" spin style={{"fontSize": "2em", "marginBottom": "-1em"}} />: null} 
+                <button type="submit">Submit</button>   
+                <div style={{"margin": "1.5em auto", "fontSize": ".7rem"}}>username minimum 6 characters | password must be 8 characters</div>  
             </form>
 
         </div>

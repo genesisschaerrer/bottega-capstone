@@ -125,6 +125,33 @@
         }
     }
 
+    .add-admin-link {
+        margin: .2em auto;
+        text-decoration: none;
+        color: #A5A58D;
+        background-color: #fff;
+        padding: .7em 1.5em;
+        border: 1px #fff solid;
+        font-size: 2rem;
+        letter-spacing: 3.5px;
+        margin-bottom: 5em;
+
+        @media(max-width: 600px){
+            text-align: center;
+        }
+
+        &:hover {
+            border: 1px solid #A5A58D;
+            background-color: #A5A58D;
+            color: #fff;
+        }
+
+        &:active {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19),
+            0 0.3rem 0.3rem rgba(0, 0, 16, 0.23);
+        }
+    }
+
     .all-current-products {
 
         .all-products-header {

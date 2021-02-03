@@ -1,5 +1,6 @@
-import React, {useState, useContext, useEffect} from "react"
+import React, {useState, useContext} from "react"
 import axios from "axios"
+import {useHistory} from "react-router-dom"
 import StripeCheckout from "react-stripe-checkout"
 
 import {CartContext} from "../context/cart-context"
@@ -10,6 +11,7 @@ const Cart = () => {
     // const [purchaseAmount, setPurchaseAmount] = useState(0)
     const [cart, setCart] = useContext(CartContext)
     let totalPrice = []
+    const history = useHistory()
 
     let totalPriceBeforeTaxes = cart.map(cartItem => cartItem.price)
     totalPriceBeforeTaxes = totalPriceBeforeTaxes.reduce((acc, curr) => acc + curr, 0)
@@ -44,26 +46,28 @@ const Cart = () => {
         )
     })
 
-    const makePayment = (token)  => {
-        const body = {
-            token,
-            totalPrice
-        }
+    //Intended to work with stipe
+    // const makePayment = (token)  => {
+    //     const body = {
+    //         token,
+    //         totalPrice
+    //     }
 
-        axios.post("https://gms-ecommerce-node-api.herokuapp.com/payment", {body})
-            .then(response => {
-                console.log("Responge: ", response)
-                const {status} = response.status
-                console.log("Status: ", status)
-                handleSubmit()
-            })
-            .catch(error => console.log(error))
+    //     axios.post("https://gms-ecommerce-node-api.herokuapp.com/payment", {body})
+    //         .then(response => {
+    //             console.log("Responge: ", response)
+    //             const {status} = response.status
+    //             console.log("Status: ", status)
+    //             handleSubmit()
+    //         })
+    //         .catch(error => console.log(error))
 
-    }
+    // }
 
     const handleSubmit = () => {
         axios.patch("https://gms-ecommerce-node-api.herokuapp.com/purchase/update-inventory", cart)
             .then(() => setCart([]))
+            .then(() => history.push("/successful-payment"))
             .catch(error => console.log("place order error", error))
     }
 
@@ -92,15 +96,15 @@ const Cart = () => {
                         </div>
                     </div>
 
-                    {/* <button className="place-order-btn" onClick={handleSubmit}>PLACE ORDER</button> */}
-                    <StripeCheckout 
+                    <button className="place-order-btn" onClick={handleSubmit}>PLACE ORDER</button>
+                    {/* <StripeCheckout 
                     stripeKey={process.env.REACT_APP_KEY}
                     token={makePayment}
                     name="goods"
                     amount={totalPrice * 100}
                     >
                     <button className="place-order-btn">PLACE ORDER</button> 
-                    </StripeCheckout>
+                    </StripeCheckout> */}
                 </div>:
                 <div className="empty-cart-container">
                     <h1 className="oops">Oops...</h1>
