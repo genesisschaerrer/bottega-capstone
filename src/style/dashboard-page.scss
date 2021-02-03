@@ -8,6 +8,10 @@
         font-size: 3.5rem;
         letter-spacing: 4px;
         margin: 2em 0;
+
+        @media(max-width: 600px){
+            text-align: center;
+        }
     }
 
     .create-product-container {
@@ -21,6 +25,10 @@
             align-self: center;
             margin: 1.3em 0;
             color: #fff;
+
+            @media(max-width: 600px){
+                text-align: center;
+            }
         }
 
         .new-product-form {
@@ -100,6 +108,10 @@
         font-size: 2rem;
         letter-spacing: 3.5px;
         margin-bottom: 5em;
+
+        @media(max-width: 600px){
+            text-align: center;
+        }
 
         &:hover {
             border: 1px solid #A5A58D;

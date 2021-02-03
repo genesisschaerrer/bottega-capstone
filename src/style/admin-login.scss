@@ -5,6 +5,11 @@
     background-color: #ddbea9;
     margin: 6em auto;
 
+    @media(max-width: 600px){
+        width: 80%;
+        height: 70vh;
+    }
+
     .admin-header {
         text-align: center;
         font-size: 3rem;

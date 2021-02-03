@@ -4,6 +4,10 @@
     flex-direction: column;
     align-items: center;
 
+    @media(max-width: 600px){
+        width: 90vw;
+    }
+
     .carousel-form {
         margin-top: 3em;
         margin-bottom: 5em;
@@ -17,6 +21,12 @@
         h1 {
             font-size: 3em;
             letter-spacing: 5px;
+
+            @media(max-width: 600px){
+                text-align: center;
+                font-size: 2.5em;
+                margin: 5em 0 1em;
+            }
         }
 
         .img-submit {
@@ -26,6 +36,10 @@
             border: 1px $darkgray solid;
             font-size: 1.7rem;
             letter-spacing: 3.5px; 
+
+            @media(max-width: 600px){
+                margin-top: 3em;
+            }
             
             &:hover{
                 border: 1px #cb997e solid;
@@ -43,6 +57,11 @@
     .carousel-img-container {
         width: 50%;
 
+        @media(max-width: 600px){
+            width: 80%;
+            margin-top: 4em;
+        }
+
         .carousel-flex{
             display: flex;
             flex-direction: column;
@@ -53,6 +72,10 @@
                 width: 50%;
                 margin-top: 4em;
                 margin-bottom: 1em;
+
+                @media(max-width: 600px){
+                    width: 100%;
+                }
             }
 
             .carousel-trash {
