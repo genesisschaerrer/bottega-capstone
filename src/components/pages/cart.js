@@ -4,7 +4,7 @@ import StripeCheckout from "react-stripe-checkout"
 
 import {CartContext} from "../context/cart-context"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { response } from "express"
+
 
 const Cart = () => { 
     // const [purchaseAmount, setPurchaseAmount] = useState(0)
