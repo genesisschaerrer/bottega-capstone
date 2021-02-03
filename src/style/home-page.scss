@@ -162,32 +162,52 @@
 
     .map-social-media-container {
         width: 100vw;
-        padding: 10em;
+        padding: 5em 10em 10em;
         background-color: $sand;
         margin-top: 3em;
         margin-bottom: 6em;
         display: flex;
         justify-content: space-evenly;
-        
-        .map {
 
-            .google-map {
-                width: 400px;
-                height: 400px;
-                border: none;
+        .map-info-flex{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .visit-us{
+                font-size: 4rem;
+                font-weight: bold;
+                letter-spacing: 8px;
+                color: #b07d62;
+            }
+
+            .map {
+            
+                .google-map {
+                    border: 2em solid $darkSand;
+                    width: 400px;
+                    height: 400px;
+                    
+                }
             }
         }
 
-        .social-media-info {
-            width: 400px;
-            font-size: 1.7rem;
-            background-image: url("../../static/images/home-page/social-media.png");
-            background-size: cover;
-            background-position: center;
-            letter-spacing: 2px;
-            line-height: 2;
-            background-color: #ffffff;
-            opacity: .99;
+        .social-media-flex{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .follow-us{
+                font-size: 4rem;
+                font-weight: bold;
+                letter-spacing: 8px;
+                color: #b07d62;
+            }
+
+            .social-media-post{
+                border: 2em solid $darkSand;
+                cursor: pointer;
+            }
         }
     }
 

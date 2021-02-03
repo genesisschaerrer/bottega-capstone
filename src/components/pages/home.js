@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
+import socialMedia from "../../../static/images/home-page/social-media.png"
+
 
 const Home = () => {
 
@@ -42,14 +44,23 @@ const Home = () => {
             </div>
 
             <div className="map-social-media-container">
-                <div className="map">
-                <iframe className="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3183.3122197692396!2d-113.57213248440985!3d37.07387005994554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ca5ab30a63b251%3A0x44950d2affeb5ee7!2s2141%20Harmony%20Cir%2C%20St.%20George%2C%20UT%2084790!5e0!3m2!1sen!2sus!4v1611353917805!5m2!1sen!2sus"></iframe>
+
+                <div className="map-info-flex"> 
+                    <div className="visit-us">VISIT US</div>
+                    <div className="map">
+                        <iframe className="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3183.3122197692396!2d-113.57213248440985!3d37.07387005994554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ca5ab30a63b251%3A0x44950d2affeb5ee7!2s2141%20Harmony%20Cir%2C%20St.%20George%2C%20UT%2084790!5e0!3m2!1sen!2sus!4v1611353917805!5m2!1sen!2sus"></iframe>
+                    </div>
                 </div>
-                <div className="social-media-info">
-                    {/* <div><FontAwesomeIcon icon=["fab", "twitter"] /></div> */}
-                    <div>Facebook</div>
-                    <div>Twitter</div>
+
+                <div className="social-media-flex">
+                    <div className="follow-us">FOLLOW US</div>
+                    <div>
+                        <a  href="https://www.instagram.com/bottega.capstone/"><img className="social-media-post" style={{"height": "400px", "width": "400px"}} src={socialMedia}/></a>                   
+                    </div>
                 </div>
+                {/* <div>
+                   <a  href="https://www.instagram.com/bottega.capstone/"><img className="social-media-post" style={{"height": "400px", "width": "400px"}} src={socialMedia}/></a>                   
+                </div> */}
             </div>
 
         </div>
