@@ -5,6 +5,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 8em;
 
+    @media(max-width: 600px){
+        grid-template-columns: 1fr;
+    }
+
     a {
         color: $darkgray;
         text-decoration: none;

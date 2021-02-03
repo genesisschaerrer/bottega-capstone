@@ -22,7 +22,7 @@ const ImageSlider = (props) => {
                 )}
             </div>
         )
-    })
+    }) 
 
     
     return (

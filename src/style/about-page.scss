@@ -13,6 +13,12 @@
         align-items: center;
         margin: 17em 0;
 
+        @media(max-width: 600px){
+            flex-direction: column;
+            height: 1000px;
+            justify-content: space-between;
+        } 
+
         .box{
             background-color: #ffffff;
             display: flex;
@@ -25,9 +31,18 @@
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.05),
             0 0.3rem 0.3rem rgba(0, 0, 1, 0.05);
 
+            @media(max-width: 600px){
+                width: 80%;
+                height: 300px;
+            } 
+
             .review-text{
                 font-size: 1.7rem;
                 color: $darkgray;
+
+                @media(max-width: 600px){
+                    font-size: 1rem;
+                }
 
             }
 
@@ -66,11 +81,29 @@
                 background-color:#ffffff;
                 opacity: .9;
 
+                @media(max-width: 600px){
+                    width: 100%;
+                    margin: auto;
+                }
+
                 .mission-statement-title {
                     margin-bottom: .5em;
                     font-size: 3rem;
                     letter-spacing: 4px;
+
+                    @media(max-width: 600px){
+                        font-size: 2rem;
+                    }
                 }
+
+                .mission-statement-message{
+
+                    @media(max-width: 600px){
+                        font-size: 1.5rem;
+                    }
+                }
+
+            
             }
         }
 
