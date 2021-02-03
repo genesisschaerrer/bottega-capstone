@@ -11,7 +11,7 @@ const Footer = () => {
     const history = useHistory()
 
     const handleSignOut = () => {
-        axios.delete("https://gms-ecommerce-client-react.herokuapp.com/logout")
+        axios.delete("https://gms-ecommerce-node-api.herokuapp.com/logout")
         .then(() => {
             setLoggedIn("LOGGED_OUT")
             history.push("/")
