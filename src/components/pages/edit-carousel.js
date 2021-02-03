@@ -99,8 +99,8 @@ const EditCarousel = () => {
 
                 />
                 <button className="img-submit" onClick={handlePost}>SUBMIT</button>
-                {isLoading? <FontAwesomeIcon icon="spinner" spin style={{"fontSize": "4em", "margin": "2em auto"}} />: null} 
             </div>
+            {isLoading? <FontAwesomeIcon icon="spinner" spin style={{"fontSize": "4em", "margin": "2em auto"}} />: null} 
             
 
             <div className="carousel-img-container">

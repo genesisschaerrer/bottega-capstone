@@ -11,7 +11,7 @@ const Cart = () => {
     let totalPriceBeforeTaxes = cart.map(cartItem => cartItem.price)
     totalPriceBeforeTaxes = totalPriceBeforeTaxes.reduce((acc, curr) => acc + curr, 0)
     totalPrice.push(totalPriceBeforeTaxes)
-    let taxes = totalPriceBeforeTaxes * .0485
+    let taxes = totalPriceBeforeTaxes * .04
     totalPrice.push(taxes)
     let shipping = 16
     totalPrice.push(shipping)
