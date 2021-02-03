@@ -182,10 +182,18 @@
             width: 100%;
             height: 400px;
 
+            @media(max-width: 600px){
+                width: 70vw;
+            }
+
 
             .oops {
                 font-family: 'Homemade Apple', cursive;
                 font-size: 7em;
+
+                @media(max-width: 600px){
+                    font-size: 5rem;
+                }
             }
 
             .empty-cart {
@@ -194,6 +202,10 @@
                 margin-top: -25px;
                 font-size: 2.4em;
                 letter-spacing: 5px;
+
+                @media(max-width: 600px){
+                    font-size: 3rem;
+                }
             }
         }
     }

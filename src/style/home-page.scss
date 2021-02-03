@@ -35,7 +35,7 @@
             background: url("../../static/images/home-page/hero-section.png") no-repeat;
             background-size: cover;
             background-position: center;
-            margin: 1em auto;
+            margin: 0 auto;
             font-size: 4rem;
             letter-spacing: 4px;
         }
@@ -128,7 +128,7 @@
             @media(max-width: 600px){
                 background-color: green;
                 flex-direction: column;
-                width: 100%;
+                width: 90%;
                  height: 650px;
                 justify-content: space-between;
                 align-items: center;

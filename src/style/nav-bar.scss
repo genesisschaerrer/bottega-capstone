@@ -11,6 +11,13 @@
         align-items: center;
         color: $darkgray;
 
+        @media(max-width: 600px){
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            height: 300px;
+        }
+
         .navbar-logo {
             border: 1px solid transparent;
             width: 13em;
@@ -39,26 +46,18 @@
             display: flex;
             justify-content: space-between;
             width: 45%;
-        }
-    }
 
-    @media(max-width: 600px){
-        .nav-bar {
-            flex-direction: column;
-            align-items: center;
-            margin: 20px 0;
-            height: 200px;
-
-            .menu-bar{
+            @media(max-width: 600px){
                 flex-direction: column;
                 align-items: center;
                 margin-top: 15px;
+                width: 100%;
+                height: 200px;
 
                 .mobile-home{
                     display: none;
-                
                 }
             }
         }
-    } 
+    }
 }
