@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 
 
+
 import "../../../node_modules/react-dropzone-component/styles/filepicker.css"
 import "../../../node_modules/dropzone/dist/min/dropzone.min.css"
 
@@ -13,6 +14,7 @@ const EditCarousel = () => {
     const [loggedIn, setLoggedIn] = useContext(AdminContext)
     const [carouselImages, setCarouselImages] = useState([])
     const [carouselImgUrl, setCarouselImgUrl] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
     const imageRef = useRef(null)
 
     const getAllCarouselImages = () => {
@@ -58,6 +60,7 @@ const EditCarousel = () => {
 
     const handlePost = (e) => {
         e.preventDefault()
+        setIsLoading(true)
         axios.post("https://gms-ecommerce-node-api.herokuapp.com/about", {carouselImgUrl}, {         
             headers: {
                 // "auth-token": document.cookie
@@ -68,6 +71,7 @@ const EditCarousel = () => {
                 setCarouselImgUrl("")
                 imageRef.current.dropzone.removeAllFiles()
                 getAllCarouselImages()
+                setIsLoading(false)
             })
             .catch(error => console.log("error: ", error))
     }
@@ -95,6 +99,7 @@ const EditCarousel = () => {
 
                 />
                 <button className="img-submit" onClick={handlePost}>SUBMIT</button>
+                {isLoading? <FontAwesomeIcon icon="spinner" spin style={{"fontSize": "4em", "margin": "2em auto"}} />: null} 
             </div>
             
 
