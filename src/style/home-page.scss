@@ -43,6 +43,13 @@
             justify-content: space-between;
             align-content: center;
 
+        // @media(max-width: 600px){
+        //     display: flex;
+        //     flex-direction: column-reverse;
+        //     align-items: center;
+        //     justify-content: space-between;
+        // }
+
             .hero-container-quote {
                 display: flex;
                 font-family: 'Homemade Apple', cursive;
@@ -85,7 +92,7 @@
         }
 
         .shop-category-container{
-            width: 80%;
+            width: 100vw;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -112,6 +119,11 @@
                 color: white;
                 cursor: pointer;
                 box-shadow: $darkBoxShadow;
+
+                @media(max-width: 600px){
+                    font-size: 2rem;
+                    height: 400px;
+                }
             }
 
             .shop-plants {
@@ -129,6 +141,11 @@
                 border: .5em solid #A5A58D;
                 cursor: pointer;
                 box-shadow: $darkBoxShadow;
+
+                @media(max-width: 600px){
+                    font-size: 2rem;
+                    height: 400px;
+                }
 
             }
         }
@@ -211,4 +228,65 @@
         }
     }
 
+    @media(max-width: 600px){
+        // .homepage-container{
+        //     width: 600px;
+        //     background-color: yellow;
+
+            .hero-picture{
+                width: 100%;
+                height: 400px;
+                margin-top: .5em;
+                font-size: 5rem;
+                letter-spacing: 4px;
+            }
+
+            .hero-container{
+                margin-top: 3em;
+
+                .hero-message{ 
+                    width: 100%;
+                    flex-direction: column-reverse;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .hero-container-quote{
+                        margin: .5em 0;
+                        text-align: center;
+                    }
+
+                    .homepage-container-message{
+                        text-align: center;
+                        margin: 2em 0;
+                    }
+                }
+
+            }
+
+            .shop-category-container{
+                height: 900px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0;
+            }
+
+            .address{
+                font-size: 1rem;
+            }
+
+            .map-social-media-container{
+                flex-direction: column;
+
+                .visit-us{
+                    margin-top: 2em;
+                }
+
+                .follow-us{
+                    margin-top: 2em;
+                }
+            }
+            
+        // }
+    }
 }

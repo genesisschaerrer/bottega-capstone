@@ -40,7 +40,7 @@ const Home = () => {
             <Link className="shop-all-btn" to="/shopall">SHOP ALL</Link>
 
             <div className="address">
-                2141 HARMONY CIRCLE, ST. GEORGE UT 84790 | 435.555.5555 | moss&timber@gmail.com
+                2141 HARMONY CIRCLE, ST. GEORGE UT 84790 | 435.555.5555
             </div>
 
             <div className="map-social-media-container">
