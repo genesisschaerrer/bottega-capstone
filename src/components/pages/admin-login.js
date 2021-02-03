@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react"
 import { useHistory } from "react-router-dom"
+import {FontAwesomeIcon, FortAweomeIcon} from "@fortawesome/react-fontawesome"
 import axios from "axios"
 
 import {AdminContext} from "../context/admin-context"
@@ -7,6 +8,7 @@ import {AdminContext} from "../context/admin-context"
 
 const AdminLogin = () => {
     const [loggedIn, setLoggedIn] = useContext(AdminContext)
+    const [isLoading, setIsLoading] = useState(false)
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -15,6 +17,7 @@ const AdminLogin = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setIsLoading(true)
 
         axios.post("https://gms-ecommerce-node-api.herokuapp.com/adminlogin", {username, email, password}, {withCredentials: true})
             .then(response => {
@@ -65,7 +68,8 @@ const AdminLogin = () => {
                 onChange={e => setPassword(e.target.value)}
                 />
                 
-                <button type="submit">Submit</button>      
+                {isLoading? <FontAwesomeIcon icon="spinner" spin style={{"fontSize": "2em", "marginBottom": "-1em"}} />: null} 
+                <button type="submit">Submit</button>     
             </form>
 
         </div>

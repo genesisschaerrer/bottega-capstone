@@ -25,6 +25,7 @@ const AdminDashboard = () => {
     const [price, setPrice] = useState(0)
     const [category, setCategory] = useState("flower")
     const [inventory, setInvetory] = useState(0)
+    const [isLoading, setIsLoading] = useState(false)
 
     const getAllProducts = () => {
         axios.get("https://gms-ecommerce-node-api.herokuapp.com/")
@@ -56,6 +57,8 @@ const AdminDashboard = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setIsLoading(true)
+
         axios({
             method: apiAction,
             url: apiUrl,
@@ -74,6 +77,7 @@ const AdminDashboard = () => {
                 imageRef.current.dropzone.removeAllFiles()
                 setProductToEdit({})
                 getAllProducts()
+                setIsLoading(false)
             }) 
             .catch(err => console.log("error: ", err))
     }
@@ -149,7 +153,7 @@ const AdminDashboard = () => {
                 />        
             </div>
 
-
+            {isLoading? <FontAwesomeIcon icon="spinner" spin style={{"fontSize": "4em", "margin": "2em auto"}} />: null} 
  
             <Link className="edit-carousel-link" to="/edit-carousel">EDIT CAROUSEL</Link>
 

@@ -13,6 +13,7 @@ import {
   faShoppingCart,
   faArrowAltCircleLeft,
   faArrowAltCircleRight,
+  faSpinner
 } from "@fortawesome/free-solid-svg-icons"
 
 
@@ -43,6 +44,7 @@ library.add(
   faShoppingCart,
   faArrowAltCircleLeft,
   faArrowAltCircleRight,
+  faSpinner
 )
 
 
