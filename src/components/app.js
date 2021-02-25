@@ -63,15 +63,15 @@ const App = () => {
     ]
   }
 
-  useEffect(() => {
-    axios.get("https://gms-ecommerce-client-react.herokuapp.com/check-login", {withCredentials: true})
-      .then(res => {
-        setLoggedIn("LOGGED_IN")
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }, [])
+  // useEffect(() => {
+  //   axios.get("https://gms-ecommerce-client-react.herokuapp.com/check-login", {withCredentials: true})
+  //     .then(res => {
+  //       setLoggedIn("LOGGED_IN")
+  //     })
+  //     .catch(error => {
+  //       console.log(error) 
+  //     })
+  // }, [])
 
     return (
       <AdminContext.Provider value={[loggedIn, setLoggedIn]}>
